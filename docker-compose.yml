@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  # App backend service
+  app-server:
+    # Configuration for building the docker image for the backend service
+    image: final-year-project:latest
+    ports:
+      - 8085:8080
+    restart: always
+    depends_on:
+      - db # This service depends on mongo. Start that first.
+    environment: # Pass environment variables to the service
+      DB_HOST: "mongodb://db"
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - frontend
+
+    # Frontend Service
+  app-client:
+    image: frontendfyp:latest
+    ports:
+      - 3001:3000
+    restart: always
+    depends_on:
+      - app-server
+    networks:
+      - frontend
+      # Database Service (Mysql)
+  db:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    restart: always
+    environment:
+      MONGO_INITDB_DATABASE: fypdb
+      MONGO_INITDB_ROOT_USERNAME: user
+      MONGO_INITDB_ROOT_PASSWORD: admin
+    volumes:
+      - db-data:/data/db 
+    networks:
+      - backend
+
+# Volumes
+volumes:
+  db-data:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:
+  frontend:
