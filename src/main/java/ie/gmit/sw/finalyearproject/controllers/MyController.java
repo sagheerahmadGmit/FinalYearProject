@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3001/")
 @RestController
 public class MyController {
 
     @Autowired
     private Testrepo tr;
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/getTest")
     public ResponseEntity<List<Test>> getAllTutorials(@RequestParam(required = false) String name) {
         try {

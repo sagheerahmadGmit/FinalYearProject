@@ -1,12 +1,13 @@
-import axios from 'axios'
-
-const DATA_REST_API = 'http://localhost:8085/getTest';
-
-class DataService {
-    getData()
-    {
-        return axios.get(DATA_REST_API);
+export const GetData = async () => {
+    try {
+        //fetch the response and the data from the flask api
+        const fetchResponse = await fetch(`http://localhost:8085/getTest`);
+        const data = await fetchResponse.json();
+        //return the predicted data to the user
+        console.log(data)
+        return data;
+    } catch (e) {
+        //catch the errors
+        return e;
     }
 }
-
-export default new DataService();
