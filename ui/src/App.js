@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import Error from './components/Error';
 import Navigation from './components/Navigation';
 import DataComponent from "./components/DataComponent";
+import Login from "./components/Login";
 
 class App extends Component {
     render() {
@@ -26,6 +27,7 @@ class App extends Component {
                         <Route path="/about" component={About}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/dataTest" component={DataComponent}/>
+                        <Route path="/login" component={Login}/>
                         <Route component={Error}/>
                     </Switch>
                 </div>
