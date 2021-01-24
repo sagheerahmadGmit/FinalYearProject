@@ -3,13 +3,15 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/HomePage/Home';
 import About from './components/About';
-import Contact from './components/Contact';
+import Contact from './components/Contact/Contact';
 import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
 import Register from "./components/Register";
-
+import { I18nextProvider } from "react-i18next";
+import Router from "react-router/modules/Router";
+import i18n from "./translation";
 class App extends Component {
     render() {
         return (
@@ -26,6 +28,9 @@ class App extends Component {
                         <Route component={Error}/>
                     </Switch>
                 </div>
+                <I18nextProvider i18n={i18n}>
+                    <Router />
+                </I18nextProvider>
             </BrowserRouter>
         );
     }
