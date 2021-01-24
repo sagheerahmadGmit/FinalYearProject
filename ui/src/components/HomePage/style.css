@@ -1,0 +1,138 @@
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+}
+html, body, #app {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.container {
+    width: 100%;
+    height: 100%;
+}
+.container > .navBox {
+    width: 80%;
+    min-height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translatex(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    z-index: 999;
+}
+.container > .navBox .navUl {
+    display: flex;
+    list-style: none;
+    color: white;
+    justify-content: space-around;
+}
+.container > .navBox .navItem {
+    color: white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.container > .navBox .navItem.logo {
+    font-size: 30px;
+}
+.container > .navBox .burger {
+    display: none;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+}
+.container > .navBox .burger:hover {
+    box-shadow: 1px 1px 10px rgba(255, 255, 255, 0.3);
+}
+.container > .navBox .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+.container > .subject {
+    width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container > .subject > .mainInfo {
+    width: 80%;
+    text-align: center;
+    color: white;
+}
+.container > .subject > .mainInfo > h1 {
+    font-size: 40px;
+}
+.container > .subject > .mainInfo > h3 {
+    margin-top: 20px;
+    font-size: 30px;
+}
+.container > .subject > .mainInfo > .wordInfoBox {
+    margin-top: 20px;
+    position: relative;
+    padding: 15px 20px;
+}
+.container > .subject > .mainInfo > .wordInfoBox > .word {
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+.container > .subject > .mainInfo > .wordInfoBox:before {
+    content: "";
+    border-left: solid 3px white;
+    border-top: solid 3px white;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100px;
+}
+.container > .subject > .mainInfo > .wordInfoBox:after {
+    content: "";
+    border-right: solid 3px white;
+    border-bottom: solid 3px white;
+    border-radius: 10px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+}
+@media screen and (max-width: 900px) {
+    body {
+        overflow-x: hidden;
+    }
+    .container .navBox .navUl {
+        position: absolute;
+        right: 0;
+        top: 50px;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        opacity: 0;
+        transform: translateX(1000%);
+        transition: transform 0.5s ease-in-out;
+    }
+    .container .navBox .navUl.navActive {
+        transform: translateX(0%);
+        opacity: 1;
+    }
+    .container .navBox .navUl.navLeaveActive {
+        transform: translateX(1000%);
+        opacity: 1;
+        transition: opacity 1s ease-in-out, transform 0.5s ease-in-out;
+    }
+    .container .navBox .burger {
+        display: block;
+    }
+}

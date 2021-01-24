@@ -1,20 +1,14 @@
-// function App() {
-//   return (
-//       <div className="App">
-//         <DataComponent />
-//       </div>
-//   );
-// }
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
+import Home from './components/HomePage/Home';
 import About from './components/About';
 import Contact from './components/Contact';
 import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 class App extends Component {
     render() {
@@ -28,6 +22,7 @@ class App extends Component {
                         <Route path="/contact" component={Contact}/>
                         <Route path="/dataTest" component={DataComponent}/>
                         <Route path="/login" component={Login}/>
+                        <Route path="/register" component={Register}/>
                         <Route component={Error}/>
                     </Switch>
                 </div>
