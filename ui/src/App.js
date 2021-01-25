@@ -9,6 +9,7 @@ import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import FooterPage from "./components/Footer/footer";
 class App extends Component {
     render() {
         return (
@@ -24,6 +25,7 @@ class App extends Component {
                         <Route path="/register" component={Register}/>
                         <Route component={Error}/>
                     </Switch>
+                    <FooterPage />
                 </div>
             </BrowserRouter>
         );
