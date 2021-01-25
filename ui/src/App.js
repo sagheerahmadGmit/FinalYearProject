@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/HomePage/Home';
 import About from './components/About';
-import Contact from './components/Contact/Contact';
+import Contact from './components/Contact/contact';
 import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
