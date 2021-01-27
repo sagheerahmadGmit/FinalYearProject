@@ -49,6 +49,7 @@ const Toolbar = props => (
             <div className="toolbar__navigation-items">
                 <ul>
                     <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact us</a></li>
                     <li><a href="/login">Login</a></li>
                 </ul>
             </div>
@@ -74,6 +75,7 @@ const SideDrawer = props => {
             <ul>
                 <li><a href="/home">Home</a></li>
                 <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact us</a></li>
                 <li><a href="/login">Login</a></li>
             </ul>
         </nav>
