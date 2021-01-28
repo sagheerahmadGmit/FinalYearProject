@@ -6,6 +6,15 @@ video {
     z-index: -1;
 }
 
+.imgCenter {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 75%;
+}
+
 .hero-container {
     /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
     height: 100vh;

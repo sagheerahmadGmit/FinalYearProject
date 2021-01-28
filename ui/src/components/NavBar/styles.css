@@ -13,7 +13,7 @@ body {
 }
 
 .toolbar {
-    position: sticky;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -142,9 +142,3 @@ body {
         display: none;
     }
 }
-
-/* @media (min-width: 769px) {
-  .side-drawer {
-    display: none;
-  }
-} */
