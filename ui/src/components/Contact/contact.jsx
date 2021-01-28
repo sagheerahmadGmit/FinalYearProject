@@ -1,5 +1,7 @@
 import React from 'react';
 import './styles.css';
+import { useState } from "react";
+import axios from 'axios'
 
 const Header = () => {
     return (
@@ -43,26 +45,9 @@ class Message extends React.Component {
         this.setState({ message: event.target.value });
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         if (!this.validate()) {
             event.preventDefault();
-
-            let details = {
-                name: this.state.name.value,
-                email: this.state.email.value,
-                message: this.state.message.value,
-              };
-              let async response = await fetch("http://localhost:5000/contact", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json;charset=utf-8",
-                },
-                body: JSON.stringify(details),
-              });
-              setStatus("Submit");
-              let result = await response.json();
-              alert(result.status);
-            };
             return;
         } else {
             event.preventDefault();
@@ -272,7 +257,54 @@ class Name extends React.Component {
     }
 }
 
+// const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     const { name, email, message } = e.target.elements;
+//     let details = {
+//     name: Name.name,
+//     email: Email.email,
+//     message: Message.message,
+//     };
+//     let response = await fetch("http://localhost:5000/contact", {
+//     method: "POST",
+//     headers: {
+//         "Content-Type": "application/json;charset=utf-8",
+//     },
+//     body: JSON.stringify(details),
+//     });
+//     let result = await response.json();
+//     alert(result.status);
+// };
+
 class Submitconfirm extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: this.props.name,
+            email: this.props.email,
+            message: this.props.message,
+            errorMessage: "",
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        axios({
+          method: "POST", 
+          url:"/send", 
+          data:  this.state
+        }).then((response)=>{
+          if (response.data.status === 'success'){
+              alert("Message Sent."); 
+              this.resetForm()
+          }else if(response.data.status === 'fail'){
+              alert("Message failed to send.")
+          }
+        })
+      }
+
     render() {
         return (
             <div>
@@ -296,6 +328,9 @@ class Submitconfirm extends React.Component {
                     <span className="ion-ios-create"></span>
                     <small>&nbsp;&nbsp;{this.props.message}</small>
                 </div>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="submit" value="Confirm"/>
+                </form>
             </div>
         );
     }
