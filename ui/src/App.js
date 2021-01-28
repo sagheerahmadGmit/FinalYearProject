@@ -9,7 +9,8 @@ import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/footer";
+
 
 class App extends Component {
     render() {
