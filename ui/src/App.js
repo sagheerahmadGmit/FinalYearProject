@@ -9,7 +9,7 @@ import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Footer from "./components/Footer/FooterPage";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
     render() {
@@ -26,7 +26,7 @@ class App extends Component {
                         <Route path="/register" component={Register}/>
                         <Route component={Error}/>
                     </Switch>
-                    <Footer />
+                    <Footer/>
                 </div>
             </BrowserRouter>
         );

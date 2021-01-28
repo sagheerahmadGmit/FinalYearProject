@@ -19,6 +19,7 @@ class Message extends React.Component {
             message: "",
             errorMessage: "",
         };
+
         this.handleBlur = this.handleBlur.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -43,13 +44,13 @@ class Message extends React.Component {
         this.setState({ message: event.target.value });
     }
 
-    handleSubmit(event) {
+    async handleSubmit(event) {
         if (!this.validate()) {
             event.preventDefault();
             return;
         } else {
             event.preventDefault();
-            this.setState({ clearScreen: true, messageSubmitted: true });
+            this.setState({clearScreen: true, messageSubmitted: true});
         }
     }
 
@@ -76,7 +77,7 @@ class Message extends React.Component {
                             <div className="form-input">
                                 <span className="ion-md-create"></span>
                                 <textarea value={this.state.value} placeholder="Write your message" rows="4"
-                                    autoFocus onBlur={this.handleBlur} onChange={this.handleChange} />
+                                          autoFocus onBlur={this.handleBlur} onChange={this.handleChange} />
                             </div>
                             <span className="error-message">{this.state.errorMessage}</span>
                             <input type="submit" value="Submit" disabled={!this.validate()} />
@@ -162,7 +163,7 @@ class Email extends React.Component {
                             <div className="form-input">
                                 <span className="ion-ios-mail"></span>
                                 <input type="email" value={this.state.value} placeholder="Please enter your email address"
-                                    autofocus="true" onBlur={this.handleBlur} onChange={this.handleChange} />
+                                       autofocus="true" onBlur={this.handleBlur} onChange={this.handleChange} />
                             </div>
                             <span className="error-message">{this.state.errorMessage}</span>
                             <input type="submit" value="Next" disabled={!this.validate()} />
@@ -238,7 +239,7 @@ class Name extends React.Component {
                             <div className="form-input">
                                 <span className="ion-ios-person"></span>
                                 <input type="text" value={this.state.value} placeholder="Please enter your name"
-                                    onBlur={this.handleBlur} onChange={this.handleChange} />
+                                       onBlur={this.handleBlur} onChange={this.handleChange} />
                             </div>
                             <span className="error-message">{this.state.errorMessage}</span>
                             <input type="submit" value="Next" disabled={!this.validate()} />
@@ -292,7 +293,7 @@ export default class Contact extends React.Component {
                 <link rel="stylesheet" href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" />
                 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:300|Nunito:300,400,500" />
                 <div id="form-app">
-                <Name />
+                    <Name />
                 </div>
             </div>
         );
