@@ -10,36 +10,31 @@ function Cards() {
                 <div className='cards__wrapper'>
                     <ul className='cards__items'>
                         <CardItem
-                            src='images/img-9.jpg'
-                            text='Sticky Notes'
+                            src='images/stickyNotes.jpg'
+                            text='Save your thoughts on Sticky Notes'
                             label='Notes'
-                            path='/services'
                         />
                         <CardItem
-                            src='images/img-2.jpg'
-                            text='Student Forum'
+                            src='images/studentForum.png'
+                            text='Ask and Answer question on the Student Forum'
                             label='Forum'
-                            path='/services'
                         />
                     </ul>
                     <ul className='cards__items'>
                         <CardItem
-                            src='images/img-3.jpg'
-                            text='Notedpad'
+                            src='images/notepad.jpg'
+                            text='Document your projects on Notedpad'
                             label='Notepad'
-                            path='/services'
                         />
                         <CardItem
-                            src='images/img-4.jpg'
-                            text='Timetable'
+                            src='images/timetable.jpg'
+                            text='Created your own schedule using the Timetable'
                             label='Timetable'
-                            path='/products'
                         />
                         <CardItem
-                            src='images/img-8.jpg'
+                            src='images/personalProfile.jpg'
                             text='Personal Profile that allows you to freely edit your information'
                             label='Profile'
-                            path='/sign-up'
                         />
                     </ul>
                 </div>

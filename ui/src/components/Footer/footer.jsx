@@ -28,46 +28,31 @@ function Footer() {
             <div class='footer-links'>
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
-                        <h2>About Us</h2>
-                        <Link to='/sign-up'>How it works</Link>
-                        <Link to='/'>Testimonials</Link>
-                        <Link to='/'>Careers</Link>
-                        <Link to='/'>Investors</Link>
-                        <Link to='/'>Terms of Service</Link>
-                    </div>
-                    <div class='footer-link-items'>
                         <h2>Contact Us</h2>
-                        <Link to='/'>Contact</Link>
-                        <Link to='/'>Support</Link>
-                        <Link to='/'>Destinations</Link>
-                        <Link to='/'>Sponsorships</Link>
+                        <a href='/about'>About Us</a>
+                        <a href='/contact'>Contact Us</a>
+                        <a href='/'>Support Us</a>
                     </div>
                 </div>
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
-                        <h2>Videos</h2>
-                        <Link to='/'>Submit Video</Link>
-                        <Link to='/'>Ambassadors</Link>
-                        <Link to='/'>Agency</Link>
-                        <Link to='/'>Influencer</Link>
+                        <h2>Video Samples</h2>
+                        <Link to='/'>Sticky Notes</Link>
+                        <Link to='/'>Timetable</Link>
+                        <Link to='/'>Notepad</Link>
+                        <Link to='/'>Student Forum</Link>
                     </div>
                     <div class='footer-link-items'>
                         <h2>Social Media</h2>
-                        <Link to='/'>Instagram</Link>
-                        <Link to='/'>Facebook</Link>
-                        <Link to='/'>Youtube</Link>
-                        <Link to='/'>Twitter</Link>
+                        <a href='https://github.com/MateuszPawlowski'>Git Hub Mateusz</a>
+                        <a href='https://github.com/sagheerahmadGmit'>Git Hub Sagheer</a>
+                        <a href='https://www.linkedin.com/in/mateusz-pawlowski-0546571ba/'>Linked In Mateusz</a>
+                        <a href='https://www.linkedin.com/in/sagheer-ahmad-a254111b6/'>Linked In Sagheer</a>
                     </div>
                 </div>
             </div>
             <section class='social-media'>
                 <div class='social-media-wrap'>
-                    <div class='footer-logo'>
-                        <Link to='/' className='social-logo'>
-                            StudentHub
-                            <i class='fab fa-typo3' />
-                        </Link>
-                    </div>
                     <small class='website-rights'>StudentHub © 2021</small>
                     <div class='social-icons'>
                         <Link
