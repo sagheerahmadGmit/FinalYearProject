@@ -1,56 +1,83 @@
 package ie.gmit.sw.finalyearproject.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "user")
-public class User{
-    private String fName;
-    private String sName;
-    @Id
-    private String email;
-    private String password;
+@Document(collection = "users")
+public class User {
+  @Id
+  private String id;
 
-    public User(String fName, String sName, String email, String password) {
-        this.fName = fName;
-        this.sName = sName;
-        this.email = email;
-        this.password = password;
-    }
+  @NotBlank
+  @Size(max = 20)
+  private String username;
 
-    public User() {
+  @NotBlank
+  @Size(max = 50)
+  @Email
+  private String email;
 
-    }
+  @NotBlank
+  @Size(max = 120)
+  private String password;
 
-    public String getfName() {
-        return fName;
-    }
+  @DBRef
+  private Set<Role> roles = new HashSet<>();
 
-    public void setfName(String fName) {
-        this.fName = fName;
-    }
+  public User() {
+  }
 
-    public String getsName() {
-        return sName;
-    }
+  public User(String username, String email, String password) {
+    this.username = username;
+    this.email = email;
+    this.password = password;
+  }
 
-    public void setsName(String sName) {
-        this.sName = sName;
-    }
+  public String getId() {
+    return id;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setId(String id) {
+    this.id = id;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getUsername() {
+    return username;
+  }
 
-    public String getPassword() {
-        return password;
-    }
+  public void setUsername(String username) {
+    this.username = username;
+  }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
+  }
+
+  public Set<Role> getRoles() {
+    return roles;
+  }
+
+  public void setRoles(Set<Role> roles) {
+    this.roles = roles;
+  }
 }
