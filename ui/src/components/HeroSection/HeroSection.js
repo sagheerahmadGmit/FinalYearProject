@@ -7,8 +7,6 @@ import logo from '../../Images/logo.png';
 function HeroSection() {
 
     return (
-
-
         <div className='hero-container'>
             <video src='/videos/video-3.mp4' autoPlay loop muted />
             <p><img src={logo} className='imgCenter' /></p>

@@ -13,7 +13,7 @@ export default class Submitconfirm extends React.Component {
         return (
             <div>
                 <Header />
-                <p className="submit-message">Thank you for reaching out! naqi {this.props.email}</p>
+                <p className="submit-message">Thank you for reaching out {this.props.name}!</p>
                 <p>Your email has been submitted and we will be in touch with you shortly.</p>
                 <br />
                 <h3>Your Message:</h3>

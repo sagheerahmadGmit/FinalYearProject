@@ -10,6 +10,7 @@ import DataComponent from "./components/DataComponent";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Footer from "./components/Footer/footer";
+import Notepad from "./components/Notepad/Notepad";
 
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Navigation />
+                    {/*<Navigation />*/}
                     <Switch>
                         <Route path="/" component={Home} exact/>
                         <Route path="/about" component={About}/>
@@ -25,9 +26,10 @@ class App extends Component {
                         <Route path="/dataTest" component={DataComponent}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
+                        <Route path="/notepad" component={Notepad}/>
                         <Route component={Error}/>
                     </Switch>
-                    <Footer/>
+                    {/*<Footer/>*/}
                 </div>
             </BrowserRouter>
         );
