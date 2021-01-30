@@ -7,10 +7,10 @@ import Contact from './components/Contact/contact';
 import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
-
+import LoginComponent from "./components/login/LoginComponent"
 
 class App extends Component {
     render() {
@@ -25,6 +25,7 @@ class App extends Component {
                         <Route path="/dataTest" component={DataComponent}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
+                        <Route path="/logincomponent" component={LoginComponent}/>
                         <Route component={Error}/>
                     </Switch>
                     <Footer/>
