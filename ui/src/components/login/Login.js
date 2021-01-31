@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -13,26 +13,16 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { GetUser } from './LoginComponent'
-
-function Copyright() {
-    return (
-        <Typography variant="body2" color="textSecondary" align="center">
-            {'Copyright © '}
-            <Link to='/' color="inherit" href="https://material-ui.com/">
-                Student Hub
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+import { useHistory } from "react-router-dom";
+import { Copyright, ConfirmUser } from '../register/utils';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
+        marginTop: '56px',
     },
     image: {
-        backgroundImage: 'url(https://source.unsplash.com/featured/?website,coding)',
+        backgroundImage: 'url(https://source.unsplash.com/featured/?software)',
         backgroundRepeat: 'no-repeat',
         backgroundColor:
             theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[900],
@@ -61,6 +51,29 @@ const useStyles = makeStyles((theme) => ({
 export default function Login() {
     const classes = useStyles();
 
+    const [fName, setfName] = useState(0);
+    const [password, setPassword] = useState(0);
+    const history = useHistory();
+
+    const handleSubmit = async (evt) => {
+        evt.preventDefault();
+        //send request 
+        let details = {
+            username: fName,
+            password: password
+        };
+
+        await ConfirmUser(details).then(response => {
+            if(response.accessToken){
+                history.push("/contact")
+            }
+            else{
+                alert("Incorrect details")
+            }
+        });
+
+    }
+
     return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -73,7 +86,7 @@ export default function Login() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
-                    <form className={classes.form} noValidate>
+                    <form className={classes.form} onSubmit={handleSubmit} validate="true">
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -84,6 +97,7 @@ export default function Login() {
                             name="email"
                             autoComplete="email"
                             autoFocus
+                            onChange={e => setfName(e.target.value)}
                         />
                         <TextField
                             variant="outlined"
@@ -95,6 +109,7 @@ export default function Login() {
                             type="password"
                             id="password"
                             autoComplete="current-password"
+                            onChange={e => setPassword(e.target.value)}
                         />
                         <FormControlLabel
                             control={<Checkbox value="remember" color="primary" />}

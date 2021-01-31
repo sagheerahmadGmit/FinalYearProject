@@ -59,10 +59,10 @@ export default function Register() {
     evt.preventDefault();
     //send request 
     let details = {
-      fName: fName,
-      sName: sName,
+      username: fName,
       email: email,
       password: password,
+      roles: ["user"]
     };
 
     await SaveUser(details).then(

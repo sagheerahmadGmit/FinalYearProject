@@ -7,18 +7,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class FinalyearprojectApplication implements CommandLineRunner {
+public class FinalyearprojectApplication {
 
 	private UserRepository userRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FinalyearprojectApplication.class, args);
-	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		User u1 = new User("John", "Doe", "johndoe@gmail.com", "doe123");
-
-		userRepository.save(u1);
 	}
 }
