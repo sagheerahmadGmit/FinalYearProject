@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import Sagheer from '../../Images/sagheer.PNG';
 import Mathew from '../../Images/mathew.PNG';
-import Saghe from '../../Images/hugh.jpeg';
+import Martin from '../../Images/martin.jpg';
 
 const About = () => {
   return (
@@ -24,7 +24,7 @@ const About = () => {
       <div className="row">
         <div className="column">
           <div className="card">
-            <img src={Mathew} alt="Sagheer" style={{width: '100%'}} height='300'/>
+            <img src={Sagheer} alt="Sagheer" style={{width: '100%'}} height='300'/>
             <div className="container">
               <h2>Sagheer Ahmad</h2>
               <p className="title">CEO &amp; Founder</p>
@@ -48,7 +48,7 @@ const About = () => {
         </div>
         <div className="column">
           <div className="card">
-            <img src={Mathew} alt="John" style={{width: '100%'}} height='300' />
+            <img src={Martin} alt="John" style={{width: '100%'}} height='300' />
             <div className="container">
               <h2>Martin Hynes</h2>
               <p className="title">Supervisor</p>

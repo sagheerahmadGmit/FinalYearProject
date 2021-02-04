@@ -66,7 +66,7 @@ export default function Register() {
     };
 
     await SaveUser(details).then(
-      history.push("")
+      history.push("/login")
     );
   
   }
@@ -91,7 +91,7 @@ export default function Register() {
                 required
                 fullWidth
                 id="firstName"
-                label="First Name"
+                label="UserName"
                 onChange={e => setfName(e.target.value)}
                 autoFocus
               />
@@ -102,7 +102,7 @@ export default function Register() {
                 required
                 fullWidth
                 id="lastName"
-                label="Last Name"
+                label="Full Name"
                 name="lastName"
                 autoComplete="lname"
                 onChange={e => setsName(e.target.value)}

@@ -15,6 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { GetUser } from './LoginComponent'
 import { useHistory } from "react-router-dom";
 import { Copyright, ConfirmUser } from '../register/utils';
+import ExampleComponent from './verifyRecaptcha';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -65,7 +66,8 @@ export default function Login() {
 
         await ConfirmUser(details).then(response => {
             if(response.accessToken){
-                history.push("/contact")
+                history.push("/")
+                alert(fName + " ,you have successfully logged in!!")
             }
             else{
                 alert("Incorrect details")
@@ -93,7 +95,7 @@ export default function Login() {
                             required
                             fullWidth
                             id="email"
-                            label="Email Address"
+                            label="Username"
                             name="email"
                             autoComplete="email"
                             autoFocus
@@ -115,6 +117,7 @@ export default function Login() {
                             control={<Checkbox value="remember" color="primary" />}
                             label="Remember me"
                         />
+                        <ExampleComponent/>
                         <Button
                             type="submit"
                             fullWidth
