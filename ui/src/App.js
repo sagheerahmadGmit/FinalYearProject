@@ -12,8 +12,7 @@ import Register from "./components/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
 
-
-class App extends Component {
+class App extends React.Component {
     render() {
         return (
             <BrowserRouter>
