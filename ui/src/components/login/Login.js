@@ -117,7 +117,8 @@ export default function Login() {
                             control={<Checkbox value="remember" color="primary" />}
                             label="Remember me"
                         />
-                        <ExampleComponent/>
+                        
+                    <ExampleComponent/>
                         <Button
                             type="submit"
                             fullWidth

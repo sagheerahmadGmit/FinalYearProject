@@ -1,43 +1,51 @@
 import React, { Component } from 'react';
 import { ReCaptcha } from 'react-recaptcha-google'
+import Recaptcha from 'react-recaptcha';
+
 class ExampleComponent extends Component {
-  constructor(props, context) {
-    super(props, context);
-    this.onLoadRecaptcha = this.onLoadRecaptcha.bind(this);
-    this.verifyCallback = this.verifyCallback.bind(this);
-  }
-  componentDidMount() {
-    if (this.captchaDemo) {
-        console.log("started, just a second...")
-        this.captchaDemo.reset();
-    }
-  }
-  onLoadRecaptcha() {
-      if (this.captchaDemo) {
-          this.captchaDemo.reset();
+  
+    constructor(props) {
+        super(props)
+    
+        this.handleSubscribe = this.handleSubscribe.bind(this);
+        this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
+        this.verifyCallback = this.verifyCallback.bind(this);
+    
+        this.state = {
+          isVerified: false
+        }
       }
-  }
-  verifyCallback(recaptchaToken) {
-    // Here you will get the final recaptchaToken!!!  
-    console.log(recaptchaToken, "<= your recaptcha token")
-  }
+    
+      recaptchaLoaded() {
+        console.log('capcha successfully loaded');
+      }
+    
+      handleSubscribe() {
+        if (this.state.isVerified) {
+          alert('You have successfully subscribed!');
+        } else {
+          alert('Please verify that you are a human!');
+        }
+      }
+    
+      verifyCallback(response) {
+        if (response) {
+          this.setState({
+            isVerified: true
+          })
+        }
+      }
+
   render() {
     return (
       <div>
         {/* You can replace captchaDemo with any ref word */}
-        <ReCaptcha
-            ref={(el) => {this.captchaDemo = el;}}
-            size="normal"
-            data-theme="dark"            
+        <Recaptcha
+            sitekey="6Ldi30kaAAAAAB-s23M3RgtglRbwufDmGa21Od6E          "
             render="explicit"
-            sitekey="recaptchaToken"
-            onloadCallback={this.onLoadRecaptcha}
+            onloadCallback={this.recaptchaLoaded}
             verifyCallback={this.verifyCallback}
         />
-        <code>
-          1. Add <strong>your site key</strong> in the ReCaptcha component. <br/>
-          2. Check <strong>console</strong> to see the token.
-        </code>
       </div>
     );
   };
