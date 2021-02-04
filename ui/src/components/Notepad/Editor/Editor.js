@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactQuill from 'react-quill';
-import debounce from '../../../helpers/helpers';
 import BorderColorIcon from '@material-ui/icons/BorderColor';
 import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
+import debounce from "../../../helpers/helpers";
 
 class EditorComponent extends React.Component {
     constructor() {
@@ -35,10 +35,11 @@ class EditorComponent extends React.Component {
     };
 
     update = debounce(() => {
-        this.props.noteUpdate(this.state.id, {
+        /*this.props.noteUpdate(this.state.id, {
             title: this.state.title,
             body: this.state.text
-        })
+        })*/
+        console.log('Updating');
     }, 1500);
 }
 

@@ -3,7 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import styles from './styles';
 import List from '@material-ui/core/List';
 import { Divider, Button } from '@material-ui/core';
-import SidebarItemComponent from '../Sidebaritem/Sidebaritem';
+import SidebarItem from '../Sidebaritem/Sidebaritem';
 
 class SidebarComponent extends React.Component {
     constructor() {
@@ -40,27 +40,28 @@ class SidebarComponent extends React.Component {
                             </div> :
                             null
                     }
-                    {/*<List>
+                    <List>
                     {
                         notes.map((_note, _index) => {
                             return(
                                 <div key={_index}>
-                                    <SidebarItemComponent
+                                    <SidebarItem
                                         _note={_note}
                                         _index={_index}
                                         selectedNoteIndex={selectedNoteIndex}
                                         selectNote={this.selectNote}
                                         deleteNote={this.deleteNote}>
-                                    </SidebarItemComponent>
+                                    </SidebarItem>
                                     <Divider></Divider>
                                 </div>
                             )
                         })
                     }
-                </List>*/}
+                </List>
                 </div>
             );
-        } else {
+        }
+        else {
             return(<div></div>);
         }
     }
@@ -77,8 +78,8 @@ class SidebarComponent extends React.Component {
         console.log(this.state)
     }
 
-    selectNote = (n, i) => console.log('select');
-    deleteNote = (note) => console.log('delete');
+    selectNote = (n,i) => this.props.selectNote(n,i);
+    deleteNote = () => console.log('delete');
 }
 
 export default withStyles(styles)(SidebarComponent);

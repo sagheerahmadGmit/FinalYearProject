@@ -24,8 +24,23 @@ export default class Notepad extends React.Component {
                 <Sidebar
                     selectedNoteIndex={this.state.selectedNoteIndex}
                     notes={this.state.notes}
+                    deleteNote={this.deleteNote}
+                    selectNote={this.selectNote}
+                    newNote={this.newNote}
                 />
-                <Editor />
+                {
+                    this.state.selectedNote ?
+                        <Editor
+                            selectedNote={this.state.selectedNote}
+                            selectedNoteIndex={this.state.selectedNoteIndex}
+                            notes={this.state.notes}>
+
+                        </Editor> :
+                        null
+                }
+
+
+
             </div>
         );
     }
@@ -41,7 +56,10 @@ export default class Notepad extends React.Component {
                     return data;
                 });
                 console.log(notes);
-                this.setState({ notes:notes });
+                this.setState({notes: notes});
             });
     }
+
+    selectNote = (note, index) => this.setState({selectedNoteIndex: index, selectedNote: note});
+
 }
