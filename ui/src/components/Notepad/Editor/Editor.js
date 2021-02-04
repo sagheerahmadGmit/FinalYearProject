@@ -16,12 +16,14 @@ class EditorComponent extends React.Component {
     }
 
     render() {
+
         const { classes } = this.props;
 
         return(
-            <div className={classes.editorContainte}>
+            <div className={classes.editorContainer}>
                 <ReactQuill
                     value={this.state.text}
+
                 />
             </div>
         );

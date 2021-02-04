@@ -1,17 +1,10 @@
-html, body {
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
 #evernote-container {
     height: 100%;
     box-sizing: border-box;
 }
 .app-container {
     height: 100%;
+    margin-top: 60px;
     box-sizing: border-box;
 }
 .quill {
