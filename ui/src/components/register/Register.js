@@ -14,6 +14,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Copyright, SaveUser } from './utils';
 import { useHistory } from "react-router-dom";
+import { message } from 'antd';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -65,9 +66,18 @@ export default function Register() {
       roles: ["user"]
     };
 
-    await SaveUser(details).then(
-      history.push("/login")
-    );
+    await SaveUser(details).then(response => {
+
+      console.log(response);
+
+      if(response.message == "User registered successfully!"){
+          history.push("/login")
+          alert("You have successfully Registered!!")
+      }
+      else{
+          alert(response.message ? response.message : "The details entered are incorrect!!")
+      }
+  });
   
   }
 

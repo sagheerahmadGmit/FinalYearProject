@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import HeroSection from "../HeroSection/HeroSection";
 import Cards from "../Cards/Cards";
 
 const home = () => {
+
     return (
         <>
             <HeroSection />
