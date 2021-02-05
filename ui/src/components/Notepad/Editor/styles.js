@@ -21,7 +21,7 @@ const styles = theme => ({
     editIcon: {
         position: 'absolute',
         left: '310px',
-        top: '12px',
+        top: '72.5px',
         color: 'white',
         width: '10',
         height: '10'
