@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './styles.css';
 import logo from '../../Images/logo.png';
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default class Navigation extends React.Component {
     state = {
@@ -26,10 +28,9 @@ export default class Navigation extends React.Component {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
 
-        if(!localStorage.getItem('username'))
-        {
+        if (!localStorage.getItem('username')) {
             return (
-                <div style={{height: '100%'}}>
+                <div style={{ height: '100%' }}>
                     <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
                     <SideDrawer show={this.state.sideDrawerOpen} />
                     {backdrop}
@@ -38,9 +39,9 @@ export default class Navigation extends React.Component {
                 </div>
             )
         }
-        else{
+        else {
             return (
-                <div style={{height: '100%'}}>
+                <div style={{ height: '100%' }}>
                     <LoggedToolbar drawerClickHandler={this.drawerToggleClickHandler} />
                     <SideDrawer show={this.state.sideDrawerOpen} />
                     {backdrop}
@@ -56,7 +57,7 @@ const logout = () => {
 
     console.log("Logged Out");
     localStorage.clear();
-    
+
 }
 
 const Toolbar = props => (
@@ -88,9 +89,16 @@ const LoggedToolbar = props => (
             <div className="spacer" />
             <div className="toolbar__navigation-items">
                 <ul>
-                    <li><a href="/" onClick={() => logout()}>Hi, {localStorage.getItem("username")}</a></li>
+                    <li class="usernameList">Hi, {localStorage.getItem("username")}</li>
                 </ul>
             </div>
+            <div class="dropdown">
+                    <DropdownButton id="dropdown-item-button" title="">
+                        <Dropdown.Item as="button" onClick={() => logout()}>
+                        <a href="/" >Logout</a>
+                        </Dropdown.Item>
+                    </DropdownButton>
+                </div>
         </nav>
     </header>
 );

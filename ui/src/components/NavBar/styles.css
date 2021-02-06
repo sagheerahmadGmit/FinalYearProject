@@ -49,6 +49,10 @@ body {
     display: flex;
 }
 
+.usernameList{
+    color: white;
+}
+
 .toolbar__navigation-items li {
     padding: 0 0.5rem;
 }
