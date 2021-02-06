@@ -7,12 +7,13 @@ import Contact from './components/Contact/contact';
 import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from "./components/login/Login";
+import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
 
 class App extends React.Component {
+
     render() {
         return (
             <BrowserRouter>
