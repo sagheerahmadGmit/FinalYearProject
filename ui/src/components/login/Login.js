@@ -54,6 +54,7 @@ export default function Login() {
 
     const [fName, setfName] = useState(0);
     const [password, setPassword] = useState(0);
+    const [verifyLogin, setVerifyLogin] = useState(0);
     const history = useHistory();
 
     const handleSubmit = async (evt) => {
@@ -68,6 +69,8 @@ export default function Login() {
             if(response.accessToken){
                 history.push("/")
                 alert(fName + " ,you have successfully logged in!!")
+                localStorage.setItem('username', response.username);
+                window.location.reload();
             }
             else{
                 alert("Incorrect details")

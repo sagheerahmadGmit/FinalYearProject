@@ -56,6 +56,8 @@ export default function Register() {
   const [password, setPassword] = useState(0);
   const history = useHistory();
 
+  let verify = false;
+
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     //send request 
@@ -70,9 +72,10 @@ export default function Register() {
 
       console.log(response);
 
-      if(response.message == "User registered successfully!"){
+      if(response.message === "User registered successfully!"){
           history.push("/login")
           alert("You have successfully Registered!!")
+          verify = true;
       }
       else{
           alert(response.message ? response.message : "The details entered are incorrect!!")

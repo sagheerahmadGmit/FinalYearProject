@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './styles.css';
 import logo from '../../Images/logo.png';
 
@@ -26,16 +26,37 @@ export default class Navigation extends React.Component {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
 
-        return (
-            <div style={{height: '100%'}}>
-                <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
-                <SideDrawer show={this.state.sideDrawerOpen} />
-                {backdrop}
-                <main>
-                </main>
-            </div>
-        )
+        if(!localStorage.getItem('username'))
+        {
+            return (
+                <div style={{height: '100%'}}>
+                    <Toolbar drawerClickHandler={this.drawerToggleClickHandler} />
+                    <SideDrawer show={this.state.sideDrawerOpen} />
+                    {backdrop}
+                    <main>
+                    </main>
+                </div>
+            )
+        }
+        else{
+            return (
+                <div style={{height: '100%'}}>
+                    <LoggedToolbar drawerClickHandler={this.drawerToggleClickHandler} />
+                    <SideDrawer show={this.state.sideDrawerOpen} />
+                    {backdrop}
+                    <main>
+                    </main>
+                </div>
+            )
+        }
     }
+}
+
+const logout = () => {
+
+    console.log("Logged Out");
+    localStorage.clear();
+    
 }
 
 const Toolbar = props => (
@@ -51,6 +72,23 @@ const Toolbar = props => (
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact us</a></li>
                     <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+);
+
+const LoggedToolbar = props => (
+    <header className="toolbar">
+        <nav className="toolbar__navigation">
+            <div>
+                <DrawerToggleButton click={props.drawerClickHandler} />
+            </div>
+            <div className="toolbar__logo"><a href="/"><img src={logo} width={100} height={75} alt="Logo" /></a></div>
+            <div className="spacer" />
+            <div className="toolbar__navigation-items">
+                <ul>
+                    <li><a href="/" onClick={() => logout()}>Hi, {localStorage.getItem("username")}</a></li>
                 </ul>
             </div>
         </nav>
