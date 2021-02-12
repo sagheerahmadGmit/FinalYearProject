@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 class App extends React.Component {
 
@@ -20,15 +21,20 @@ class App extends React.Component {
                 <div>
                     <Navigation />
                     <Switch>
-                        <Route path="/" component={Home} exact/>
-                        <Route path="/about" component={About}/>
-                        <Route path="/contact" component={Contact}/>
-                        <Route path="/dataTest" component={DataComponent}/>
-                        <Route path="/login" component={Login}/>
-                        <Route path="/register" component={Register}/>
-                        <Route path="/notepad" component={Notepad}/>
-                        <Route component={Error}/>
+                        <Route path="/" component={Home} exact />
+                        <Route path="/about" component={About} />
+                        <Route path="/contact" component={Contact} />
+                        <Route path="/dataTest" component={DataComponent} />
+                        <Route path="/login" component={Login} />
+                        <Route path="/register" component={Register} />
+                        <Route path="/notepad" component={Notepad} />
+                        <Route component={Error} />
                     </Switch>
+                    <MessengerCustomerChat
+                        pageId="<PAGE_ID>"
+                        appId="<APP_ID>"
+                        htmlRef="<REF_STRING>"
+                    />
                     {/*<Footer/>*/}
                 </div>
             </BrowserRouter>

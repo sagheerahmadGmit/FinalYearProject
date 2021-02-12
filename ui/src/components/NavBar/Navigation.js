@@ -89,10 +89,11 @@ const LoggedToolbar = props => (
             <div className="spacer" />
             <div className="toolbar__navigation-items">
                 <ul>
-                    <li class="usernameList">Hi, {localStorage.getItem("username")}</li>
+                    <li><a href="/notepad">Notepad</a></li>
+                    <li className="usernameList">Hi, {localStorage.getItem("username")}</li>
                 </ul>
             </div>
-            <div class="dropdown">
+            <div className="dropdown">
                     <DropdownButton id="dropdown-item-button" title="">
                         <Dropdown.Item as="button" onClick={() => logout()}>
                         <a href="/" >Logout</a>
