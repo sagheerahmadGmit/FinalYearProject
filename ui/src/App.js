@@ -12,6 +12,7 @@ import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import StickyNo from './components/stickyNotes/StickyNo';
 
 class App extends React.Component {
 
@@ -28,14 +29,14 @@ class App extends React.Component {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                         <Route path="/notepad" component={Notepad} />
+                        <Route path="/notes" component={StickyNo} />
                         <Route component={Error} />
                     </Switch>
-                    <MessengerCustomerChat
-                        pageId="<PAGE_ID>"
-                        appId="<APP_ID>"
-                        htmlRef="<REF_STRING>"
-                    />
-                    {/*<Footer/>*/}
+                    {/* <MessengerCustomerChat
+                        pageId="100009273085257"
+                        appId="753869398896741"
+                    /> */}
+                    <Footer/>
                 </div>
             </BrowserRouter>
         );
