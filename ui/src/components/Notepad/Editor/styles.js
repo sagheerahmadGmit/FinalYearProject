@@ -28,7 +28,7 @@ const styles = theme => ({
     },
     editorContainer: {
         height: '100%',
-        boxSizing: 'border-box'
+        boxSizing: 'border-box',
     }
 });
 
