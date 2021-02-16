@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../App.css';
-import { Button } from '../Button/Button';
+import { ButtonLogin } from '../Button/ButtonLogin';
+import { ButtonNews } from '../Button/ButtonNews';
+
 import './HeroSection.css';
 import logo from '../../Images/logo.png';
 
@@ -11,20 +13,20 @@ function HeroSection() {
             <video src='/videos/video-3.mp4' autoPlay loop muted />
             <p><img src={logo} className='imgCenter' /></p>
             <div className='hero-btns'>
-                <Button
+                <ButtonNews
                     className='btns'
                     buttonStyle='btn--outline'
                     buttonSize='btn--large'
                 >
                     Newsletter
-                </Button>
-                <Button
+                </ButtonNews>
+                <ButtonLogin
                     className='btns'
                     buttonStyle='btn--primary'
                     buttonSize='btn--large'
                 >
                     Sign In <i className='far fa-play-circle' />
-                </Button>
+                </ButtonLogin>
             </div>
         </div>
     );

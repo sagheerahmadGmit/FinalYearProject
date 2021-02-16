@@ -6,6 +6,7 @@
     height: 100%;
     margin-top: 60px;
     box-sizing: border-box;
+    float: left;
 }
 .quill {
     height: 100%;
