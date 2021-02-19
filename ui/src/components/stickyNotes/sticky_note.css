@@ -1,0 +1,10 @@
+body{
+  margin-top: 55px;
+}
+
+.divSticky{
+  height: 500px;
+  padding-bottom: 15px;
+  width: 100%;
+  margin: auto;
+}

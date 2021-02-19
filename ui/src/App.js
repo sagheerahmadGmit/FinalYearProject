@@ -36,7 +36,7 @@ class App extends React.Component {
                         pageId="100009273085257"
                         appId="753869398896741"
                     /> */}
-                    {/* <Footer/> */}
+                    <Footer/>
                 </div>
             </BrowserRouter>
         );
