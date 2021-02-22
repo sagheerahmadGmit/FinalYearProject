@@ -13,6 +13,8 @@ import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import StickyNotes from './components/stickyNotes/StickyNotes';
+import Board from './components/stickyNotes2/Board';
+import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
 
 class App extends React.Component {
 
@@ -30,6 +32,8 @@ class App extends React.Component {
                         <Route path="/register" component={Register} />
                         <Route path="/notepad" component={Notepad} />
                         <Route path="/stickyNotes" component={StickyNotes} />
+                        <Route path="/board" component={Board} />
+                        <Route path="/StickyNotesReact" component={StickyNotesReact} />
                         <Route component={Error} />
                     </Switch>
                     {/* <MessengerCustomerChat

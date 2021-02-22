@@ -27,6 +27,7 @@
     "react": "^17.0.1",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.4.3",
+    "react-bootstrap-dropdown-menu": "^1.1.23",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
     "react-messenger-customer-chat": "^0.8.0",

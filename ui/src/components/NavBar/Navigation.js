@@ -90,15 +90,16 @@ const LoggedToolbar = props => (
             <div className="toolbar__navigation-items">
                 <ul>
                     <li><a href="/notepad">Notepad</a></li>
+                    <li><a href="/stickyNotes">Sticky Notes</a></li>
                     <li className="usernameList">Hi, {localStorage.getItem("username")}</li>
                 </ul>
             </div>
             <div className="dropdown">
-                    <DropdownButton id="dropdown-item-button" title="">
+                    <Dropdown className="dropdown2" id="dropdown-item-button" title="">
                         <Dropdown.Item as="button" onClick={() => logout()}>
                         <a href="/" >Logout</a>
                         </Dropdown.Item>
-                    </DropdownButton>
+                    </Dropdown>
                 </div>
         </nav>
     </header>
@@ -123,7 +124,9 @@ const SideDrawer = props => {
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/contact">Contact us</a></li>
-                <li><a href="/login">Login</a></li>
+                <li><a href="/notepad">Notepad</a></li>
+                <li><a href="/stickyNotes">Sticky Notes</a></li>
+                <li onClick={() => logout()}><a href="/" >Logout</a></li>
             </ul>
         </nav>
     )

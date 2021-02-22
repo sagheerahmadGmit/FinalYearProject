@@ -1,5 +1,5 @@
 body{
-  margin-top: 55px;
+  margin-top: 56px;
 }
 
 .divSticky{
@@ -7,4 +7,12 @@ body{
   padding-bottom: 15px;
   width: 100%;
   margin: auto;
+  overflow: auto;
+  background-color: wheat;
+}
+
+.divStickyLogOut{
+  margin-top: 250px;
+  margin-bottom: 150px;
+  text-align: center;
 }
