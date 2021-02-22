@@ -12,8 +12,8 @@ import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
-import StickyNotes from './components/stickyNotes/StickyNotes';
-import Board from './components/stickyNotes2/Board';
+// import StickyNotes from './components/stickyNotes/StickyNotes';
+// import Board from './components/stickyNotes2/Board';
 import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
 
 class App extends React.Component {
@@ -31,8 +31,8 @@ class App extends React.Component {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                         <Route path="/notepad" component={Notepad} />
-                        <Route path="/stickyNotes" component={StickyNotes} />
-                        <Route path="/board" component={Board} />
+                        {/* <Route path="/stickyNotes" component={StickyNotes} /> */}
+                        {/* <Route path="/board" component={Board} /> */}
                         <Route path="/StickyNotesReact" component={StickyNotesReact} />
                         <Route component={Error} />
                     </Switch>
@@ -40,7 +40,12 @@ class App extends React.Component {
                         pageId="100009273085257"
                         appId="753869398896741"
                     /> */}
-                    <Footer/>
+
+                    {/* window.location.pathname != '/board' &&  */}
+
+                    {
+                        window.location.pathname != '/notepad' && window.location.pathname != '/StickyNotesReact' && <Footer />
+                    }
                 </div>
             </BrowserRouter>
         );

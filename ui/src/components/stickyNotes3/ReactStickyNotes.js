@@ -4,6 +4,8 @@ import * as icons from './icons';
 import { h, getColorCodes, getNotes, getUUID } from './utils';
 import { NormalView, BubbleView, PageView, FullscreenView } from './views' ;
 import { UploadModal } from './modals' ;
+import './sticky_note.css';
+
 class ReactStickyNotes extends Component {
 	static defaultProps = {
 		useCSS: true,

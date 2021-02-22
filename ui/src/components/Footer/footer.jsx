@@ -8,7 +8,7 @@ function Footer() {
         <div className='footer-container'>
             <section className='footer-subscription'>
                 <p className='footer-subscription-heading'>
-                    Join the StudentHub newsletter to receive our best vacation deals
+                    Join the StudentHub newsletter to recieve updates!
                 </p>
                 <p className='footer-subscription-text'>
                     You can unsubscribe at any time.
@@ -37,9 +37,9 @@ function Footer() {
                 <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>Video Samples</h2>
-                        <Link to='/'>Sticky Notes</Link>
+                        <Link to='/StickyNotesReact'>Sticky Notes</Link>
                         <Link to='/'>Timetable</Link>
-                        <Link to='/'>Notepad</Link>
+                        <Link to='/notepad'>Notepad</Link>
                         <Link to='/'>Student Forum</Link>
                     </div>
                     <div className='footer-link-items'>
