@@ -11,6 +11,7 @@ import Login from "./components/login/Login";
 import Register from "./components/register/Register";
 import Footer from "./components/Footer/footer";
 import Notepad from "./components/Notepad/Notepad";
+import chatList from "./components/ChatBot/ChatList/chatList";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 // import StickyNotes from './components/stickyNotes/StickyNotes';
 import Board from './components/stickyNotes2/Board';
@@ -30,6 +31,7 @@ class App extends React.Component {
                         <Route path="/dataTest" component={DataComponent} />
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
+                        <Route path="/chat" component={chatList} />
                         <Route path="/notepad" component={Notepad} />
                         {/* <Route path="/stickyNotes" component={StickyNotes} /> */}
                         <Route path="/board" component={Board} />
@@ -44,7 +46,7 @@ class App extends React.Component {
                     {/* window.location.pathname != '/board' &&  */}
 
                     {
-                        window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
+                        window.location.pathname != '/Board' && window.location.pathname != '/notepad' && <Footer />
                     }
                 </div>
             </BrowserRouter>

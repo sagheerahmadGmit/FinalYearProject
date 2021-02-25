@@ -7,7 +7,7 @@ $second-yellow-color: #FFDA65;
 $turquoise-color: #1AB188;
 $blue-color: #1496bb;
 $white-color: white;
-$body-background: #24313C;
+$body-background: white;
 
 // MIXINS
 @mixin transition($args...) {
@@ -52,6 +52,7 @@ body {
   margin: 0;
   padding: 0;
   background: $body-background;
+  color: black;
 }
 
 .board {
