@@ -90,7 +90,7 @@ const LoggedToolbar = props => (
             <div className="toolbar__navigation-items">
                 <ul>
                     <li><a href="/notepad">Notepad</a></li>
-                    <li><a href="/StickyNotesReact">Sticky Notes</a></li>
+                    <li><a href="/Board">Sticky Notes</a></li>
                     <li className="usernameList">Hi, {localStorage.getItem("username")}</li>
                 </ul>
             </div>

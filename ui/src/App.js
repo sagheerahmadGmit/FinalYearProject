@@ -14,6 +14,7 @@ import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 // import StickyNotes from './components/stickyNotes/StickyNotes';
 import Board from './components/stickyNotes2/Board';
+// import Scheduler from './components/Scheduler/schedulerReact';
 // import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
                         <Route path="/notepad" component={Notepad} />
                         {/* <Route path="/stickyNotes" component={StickyNotes} /> */}
                         <Route path="/board" component={Board} />
+                        {/* <Route path="/scheduler" component={Scheduler} /> */}
                         {/* <Route path="/StickyNotesReact" component={StickyNotesReact} /> */}
                         <Route component={Error} />
                     </Switch>
@@ -44,7 +46,7 @@ class App extends React.Component {
                     {/* window.location.pathname != '/board' &&  */}
 
                     {
-                        window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
+                        window.location.pathname != '/scheduler' && window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
                     }
                 </div>
             </BrowserRouter>

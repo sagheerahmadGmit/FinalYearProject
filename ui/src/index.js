@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import 'jquery';
+// import 'bootstrap/dist/js/bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css'
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase';
+// window.jQuery = window.$ = global.jquery;
+global.jQuery = require('jquery');
+require('bootstrap');
 
 //const firebase = require('firebase');
 // require('firebase/firestore');
