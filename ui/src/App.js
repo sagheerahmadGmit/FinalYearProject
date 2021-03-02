@@ -16,8 +16,23 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Board from './components/stickyNotes2/Board';
 // import Scheduler from './components/Scheduler/schedulerReact';
 // import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
+import ThreadDisplay from './components/studentForum/ThreadDisplay';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 class App extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+        const config =
+        {
+            PutYouOwn: 'firebaseConfigInHere'
+        };
+
+        this.app = firebase.initializeApp(config);
+        this.database = this.app.database();
+    }
 
     render() {
         return (
@@ -36,6 +51,8 @@ class App extends React.Component {
                         <Route path="/board" component={Board} />
                         {/* <Route path="/scheduler" component={Scheduler} /> */}
                         {/* <Route path="/StickyNotesReact" component={StickyNotesReact} /> */}
+                        <Route path="/forum" component={<ThreadDisplay database={this.database} />} />
+                        
                         <Route component={Error} />
                     </Switch>
                     {/* <MessengerCustomerChat
