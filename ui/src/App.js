@@ -16,6 +16,7 @@ import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Board from './components/stickyNotes2/Board';
 // import Scheduler from './components/Scheduler/schedulerReact';
 // import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
+import Forum from './components/studentForum2/Forum';
 
 class App extends React.Component {
 
@@ -23,7 +24,10 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Navigation />
+                    
+                    {
+                        window.location.pathname != '/forum' && <Navigation />
+                    }
                     <Switch>
                         <Route path="/" component={Home} exact />
                         <Route path="/about" component={About} />
@@ -36,6 +40,7 @@ class App extends React.Component {
                         <Route path="/board" component={Board} />
                         {/* <Route path="/scheduler" component={Scheduler} /> */}
                         {/* <Route path="/StickyNotesReact" component={StickyNotesReact} /> */}
+                        <Route path="/forum" component={Forum} />
                         <Route component={Error} />
                     </Switch>
                     {/* <MessengerCustomerChat
@@ -46,7 +51,7 @@ class App extends React.Component {
                     {/* window.location.pathname != '/board' &&  */}
 
                     {
-                        window.location.pathname != '/scheduler' && window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
+                        window.location.pathname != '/forum' && window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
                     }
                 </div>
             </BrowserRouter>
