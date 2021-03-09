@@ -70,6 +70,7 @@ export default function Login() {
                 history.push("/")
                 alert(fName + " ,you have successfully logged in!!")
                 localStorage.setItem('username', response.username);
+                localStorage.setItem('password', password);
                 window.location.reload();
             }
             else{
