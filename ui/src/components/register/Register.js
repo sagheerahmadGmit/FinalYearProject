@@ -12,10 +12,9 @@ import Container from '@material-ui/core/Container';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
-import { Copyright, SaveUser } from './utils';
+import { Copyright, SaveUser, postData } from './utils';
 import { useHistory } from "react-router-dom";
 import { message } from 'antd';
-
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,6 +66,11 @@ export default function Register() {
       password: password,
       roles: ["user"]
     };
+
+    await postData('https://api.chatengine.io/users/', { username: fName, secret: password }, '30535aad-5cc0-484f-ba89-c4d44c78d944').then(data => {
+      console.log(data); // JSON data parsed by `data.json()` call
+
+    });
 
     await SaveUser(details).then(response => {
 

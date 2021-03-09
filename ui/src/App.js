@@ -18,7 +18,7 @@ import Board from './components/stickyNotes2/Board';
 // import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
 import Forum from './components/studentForum2/Forum';
 import { ChakraProvider } from "@chakra-ui/react";
-
+import ChatMain from './components/ChatBot/ChatMain';
 class App extends React.Component {
 
     render() {
@@ -27,6 +27,10 @@ class App extends React.Component {
                 <div>
                     
                     <Navigation />
+                    {
+                        window.location.pathname != '/chat' && <Navigation />
+                    }
+          
                     <Switch>
                         <Route path="/" component={Home} exact />
                         <Route path="/about" component={About} />
@@ -35,6 +39,8 @@ class App extends React.Component {
                         <Route path="/login" component={Login} />
                         <Route path="/register" component={Register} />
                         <Route path="/notepad" component={Notepad} />
+                        <Route path="/chat" component={ChatMain} />
+
                         {/* <Route path="/stickyNotes" component={StickyNotes} /> */}
                         <Route path="/board" component={Board} />
                         {/* <Route path="/scheduler" component={Scheduler} /> */}
@@ -53,6 +59,7 @@ class App extends React.Component {
 
                     {
                         window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
+                        window.location.pathname != '/Board' && window.location.pathname != '/notepad' && window.location.pathname != '/chat' && <Footer />
                     }
                 </div>
             </BrowserRouter>
