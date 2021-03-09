@@ -1,10 +1,11 @@
 import { Flex, Spinner, VStack } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react";
-import Navbar from "./navbar";
+// import Navbar from "./navbar";
 import Post from "./post";
 // import db from "./firebase";
 import db from '../../index';
+import AddNewPost from "./add-new-post";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -57,7 +58,8 @@ const Forum = () => {
 
   return (
     <>
-      <Navbar />
+      <AddNewPost />
+      
       <Container maxW="md" centerContent p={8}>
         <VStack spacing={8} w="100%">
           {posts.map((post) => (

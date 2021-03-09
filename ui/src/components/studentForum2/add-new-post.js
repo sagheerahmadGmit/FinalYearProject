@@ -15,6 +15,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import db from '../../index';
+import './styles.css';
 
 const AddNewPost = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -41,7 +42,7 @@ const AddNewPost = () => {
 
   return (
     <>
-      <Button onClick={onOpen} colorScheme="blue">
+      <Button id="postButton" onClick={onOpen} colorScheme="blue">
         Add new post
       </Button>
 
