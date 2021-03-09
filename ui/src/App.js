@@ -14,7 +14,10 @@ import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 // import StickyNotes from './components/stickyNotes/StickyNotes';
 import Board from './components/stickyNotes2/Board';
+// import Scheduler from './components/Scheduler/schedulerReact';
 // import StickyNotesReact from './components/stickyNotes3/ReactStickyNotes';
+import Forum from './components/studentForum2/Forum';
+import { ChakraProvider } from "@chakra-ui/react";
 import ChatMain from './components/ChatBot/ChatMain';
 class App extends React.Component {
 
@@ -22,9 +25,12 @@ class App extends React.Component {
         return (
             <BrowserRouter>
                 <div>
+                    
+                    <Navigation />
                     {
                         window.location.pathname != '/chat' && <Navigation />
                     }
+          
                     <Switch>
                         <Route path="/" component={Home} exact />
                         <Route path="/about" component={About} />
@@ -37,7 +43,11 @@ class App extends React.Component {
 
                         {/* <Route path="/stickyNotes" component={StickyNotes} /> */}
                         <Route path="/board" component={Board} />
+                        {/* <Route path="/scheduler" component={Scheduler} /> */}
                         {/* <Route path="/StickyNotesReact" component={StickyNotesReact} /> */}
+                        <ChakraProvider>
+                            <Route path="/forum" component={Forum} />
+                        </ChakraProvider>
                         <Route component={Error} />
                     </Switch>
                     {/* <MessengerCustomerChat
@@ -48,6 +58,7 @@ class App extends React.Component {
                     {/* window.location.pathname != '/board' &&  */}
 
                     {
+                        window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/notepad' && <Footer />
                         window.location.pathname != '/Board' && window.location.pathname != '/notepad' && window.location.pathname != '/chat' && <Footer />
                     }
                 </div>

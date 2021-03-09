@@ -2,8 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+// import 'jquery';
+// import 'bootstrap/dist/js/bootstrap';
+// import 'bootstrap/dist/css/bootstrap.css'
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase';
+// window.jQuery = window.$ = global.jquery;
+global.jQuery = require('jquery');
+require('bootstrap');
 
 //const firebase = require('firebase');
 // require('firebase/firestore');
@@ -11,13 +17,13 @@ import firebase from 'firebase';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBKMyh38w1OzPFwBfjOAX3SN_yfhlhxnHg",
-    authDomain: "text-editor-8e086.firebaseapp.com",
-    projectId: "text-editor-8e086",
-    storageBucket: "text-editor-8e086.appspot.com",
-    messagingSenderId: "753566145078",
-    appId: "1:753566145078:web:b1b6c2fb5be0b885899697",
-    measurementId: "G-7ZPZRKR4SR"
+  apiKey: "AIzaSyAGHsbAqAmhfxX1ytzklglnmIzIFS2ZW7s",
+  authDomain: "studentforum2.firebaseapp.com",
+  projectId: "studentforum2",
+  storageBucket: "studentforum2.appspot.com",
+  messagingSenderId: "1012290718807",
+  appId: "1:1012290718807:web:95d9c5b9cd8f5526a0e712",
+  measurementId: "G-WBJJV5CWM9"
 };
 // Initialize Firebase
 // firebase.initializeApp(firebaseConfig);
