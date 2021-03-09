@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^4.5.0",
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/preset-react": "^7.12.10",
     "@emotion/react": "^11.1.4",
@@ -29,6 +30,7 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-bootstrap": "^1.4.3",
     "react-bootstrap-dropdown-menu": "^1.1.23",
+    "react-chat-engine": "^1.6.1",
     "react-dom": "^17.0.1",
     "react-i18next": "^11.8.5",
     "react-messenger-customer-chat": "^0.8.0",
