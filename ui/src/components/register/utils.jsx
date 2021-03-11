@@ -21,7 +21,7 @@ export const Copyright = () => {
 }
 
 export const SaveUser = async (details) => {
-    let response = await fetch("http://localhost:8095/api/auth/signup", {
+    let response = await fetch("/signup", {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=utf-8",
@@ -32,7 +32,7 @@ export const SaveUser = async (details) => {
 }
 
 export const ConfirmUser = async (details) => {
-    let response = await fetch("http://localhost:8095/api/auth/signin", {
+    let response = await fetch("/signin", {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=utf-8",
