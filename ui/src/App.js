@@ -4,7 +4,7 @@ import './App.css';
 import Home from './components/HomePage/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/contact';
-import Error from './components/Error';
+import Error2 from './components/Error2';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/login/Login";
@@ -39,7 +39,7 @@ class App extends React.Component {
                         <ChakraProvider>
                             <Route path="/forum" component={Forum} />
                         </ChakraProvider>
-                        <Route component={Error} />
+                        <Route component={Error2} />
                     </Switch>
                     {/* <MessengerCustomerChat
                         pageId="100009273085257"
