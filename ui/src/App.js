@@ -16,6 +16,8 @@ import Board from './components/stickyNotes2/Board';
 import Forum from './components/studentForum2/Forum';
 import { ChakraProvider } from "@chakra-ui/react";
 import ChatMain from './components/ChatBot/ChatMain';
+import MasterCommentThread from './components/comments/masterCommentThread';
+
 class App extends React.Component {
 
     render() {
@@ -36,6 +38,7 @@ class App extends React.Component {
                         <Route path="/notepad" component={Notepad} />
                         <Route path="/chat" component={ChatMain} />
                         <Route path="/board" component={Board} />
+                        <Route path="/comments" component={MasterCommentThread} />
                         <ChakraProvider>
                             <Route path="/forum" component={Forum} />
                         </ChakraProvider>
