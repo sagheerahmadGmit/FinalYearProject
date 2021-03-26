@@ -6,6 +6,7 @@ import Post from "./post";
 // import db from "./firebase";
 import db from '../../index';
 import AddNewPost from "./add-new-post";
+import ReplyPost from "./add-reply-post";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -13,7 +14,6 @@ const Forum = () => {
 
   useEffect(() => {
     // Hook to handle the initial fetching of posts
-
     db.collection("posts")
       .orderBy("createdAt", "desc")
       .get()
@@ -57,17 +57,21 @@ const Forum = () => {
   }
 
   return (
-    <>
-      <AddNewPost />
-      
-      <Container maxW="md" centerContent p={8}>
-        <VStack spacing={8} w="100%">
-          {posts.map((post) => (
-            <Post post={post} key={post.id} />
-          ))}
-        </VStack>
-      </Container>
-    </>
+    <div>
+      <>
+        <AddNewPost />
+
+        <Container maxW="md" centerContent p={8}>
+          <div>
+              <VStack spacing={8} w="100%">
+                {posts.map((post) => (
+                  <Post post={post} key={post.id} />
+                ))}                
+              </VStack>      
+          </div>
+        </Container>
+      </>
+    </div>
   );
 };
 
