@@ -1,27 +1,25 @@
 version: "3.7"
 services:
   app-server:
-    image: final-year-project:latest
+    image: sagheergmit/final-year-project:latest
     ports:
-      - 8085:8080
+      - 8080:8085
     restart: always
     depends_on:
       - db
     environment:
       DB_HOST: "mongodb://db"
     networks:
-      - backend
-      - frontend
-
+      - fyp
   app-client:
-    image: frontendfyp:latest
+    image: sagheergmit/frontendfyp:latest
     ports:
-      - 3001:3000
+      - 80:3000
     restart: always
     depends_on:
       - app-server
     networks:
-      - frontend
+      - fyp
   db:
     image: mongo:latest
     ports:
@@ -30,13 +28,10 @@ services:
     environment:
       MONGO_INITDB_DATABASE: fypdb
     volumes:
-      - db-data:/data/db 
+      - db-data:/data/db
     networks:
-      - backend
-
+      - fyp
 volumes:
   db-data:
-
 networks:
-  backend:
-  frontend:
+  fyp:
