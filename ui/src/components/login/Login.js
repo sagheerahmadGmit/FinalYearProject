@@ -134,9 +134,9 @@ export default function Login() {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                <Link to='#' href="/" variant="body2">
-                                    Forgot password?
-                                </Link>
+                                {/*<Link to='#' href="/" variant="body2">*/}
+                                {/*    Forgot password?*/}
+                                {/*</Link>*/}
                             </Grid>
                             <Grid item>
                                 <Link to='/register' href="/register" variant="body2">

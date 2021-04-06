@@ -17,11 +17,16 @@ function Footer() {
                     <form>
                         <input
                             className='footer-input'
+                            id='mce-EMAIL'
                             name='email'
                             type='email'
                             placeholder='Your Email'
+                            required
                         />
-                        <ButtonLogin buttonStyle='btn--outline'>Subscribe</ButtonLogin>
+                        <ButtonLogin
+                            buttonStyle='btn--outline'
+                            type='submit'
+                        >Subscribe</ButtonLogin>
                     </form>
                 </div>
             </section>
@@ -33,8 +38,6 @@ function Footer() {
                         <a href='/contact'>Contact Us</a>
                         <a href='/'>Support Us</a>
                     </div>
-                </div>
-                <div className='footer-link-wrapper'>
                     <div className='footer-link-items'>
                         <h2>Video Samples</h2>
                         <Link to='/StickyNotesReact'>Sticky Notes</Link>
@@ -54,48 +57,48 @@ function Footer() {
             <section className='social-media'>
                 <div className='social-media-wrap'>
                     <small className='website-rights'>StudentHub © 2021</small>
-                    <div className='social-icons'>
-                        <Link
-                            className='social-icon-link facebook'
-                            to='/'
-                            target='_blank'
-                            aria-label='Facebook'
-                        >
-                            <i className='fab fa-facebook-f' />
-                        </Link>
-                        <Link
-                            className='social-icon-link instagram'
-                            to='/'
-                            target='_blank'
-                            aria-label='Instagram'
-                        >
-                            <i className='fab fa-instagram' />
-                        </Link>
-                        <Link
-                            className='social-icon-link youtube'
-                            to='/'
-                            target='_blank'
-                            aria-label='Youtube'
-                        >
-                            <i className='fab fa-youtube' />
-                        </Link>
-                        <Link
-                            className='social-icon-link twitter'
-                            to='/'
-                            target='_blank'
-                            aria-label='Twitter'
-                        >
-                            <i className='fab fa-twitter' />
-                        </Link>
-                        <Link
-                            className='social-icon-link twitter'
-                            to='/'
-                            target='_blank'
-                            aria-label='LinkedIn'
-                        >
-                            <i className='fab fa-linkedin' />
-                        </Link>
-                    </div>
+                    {/*<div className='social-icons'>*/}
+                    {/*    <Link*/}
+                    {/*        className='social-icon-link facebook'*/}
+                    {/*        to='/'*/}
+                    {/*        target='_blank'*/}
+                    {/*        aria-label='Facebook'*/}
+                    {/*    >*/}
+                    {/*        <i className='fab fa-facebook-f' />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link*/}
+                    {/*        className='social-icon-link instagram'*/}
+                    {/*        to='/'*/}
+                    {/*        target='_blank'*/}
+                    {/*        aria-label='Instagram'*/}
+                    {/*    >*/}
+                    {/*        <i className='fab fa-instagram' />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link*/}
+                    {/*        className='social-icon-link youtube'*/}
+                    {/*        to='/'*/}
+                    {/*        target='_blank'*/}
+                    {/*        aria-label='Youtube'*/}
+                    {/*    >*/}
+                    {/*        <i className='fab fa-youtube' />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link*/}
+                    {/*        className='social-icon-link twitter'*/}
+                    {/*        to='/'*/}
+                    {/*        target='_blank'*/}
+                    {/*        aria-label='Twitter'*/}
+                    {/*    >*/}
+                    {/*        <i className='fab fa-twitter' />*/}
+                    {/*    </Link>*/}
+                    {/*    <Link*/}
+                    {/*        className='social-icon-link twitter'*/}
+                    {/*        to='/'*/}
+                    {/*        target='_blank'*/}
+                    {/*        aria-label='LinkedIn'*/}
+                    {/*    >*/}
+                    {/*        <i className='fab fa-linkedin' />*/}
+                    {/*    </Link>*/}
+                    {/*</div>*/}
                 </div>
             </section>
         </div>

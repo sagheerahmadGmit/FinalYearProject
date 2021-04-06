@@ -24,6 +24,7 @@ body {
 .toolbar__navigation {
     display: flex;
     height: 100%;
+    width: 100%;
     align-items: center;
     padding: 0 1rem;
 }
@@ -97,7 +98,7 @@ body {
     top: 0;
     left: 0;
     width: 70%;
-    max-width: 400px;
+    max-width: 250px;
     z-index: 200;
     transform: translateX(-100%);
     transition: transform .3s ease-out;
