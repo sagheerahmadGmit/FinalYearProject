@@ -7,6 +7,7 @@ import Post from "./post";
 import db from '../../index';
 import AddNewPost from "./add-new-post";
 import ReplyPost from "./add-reply-post";
+import { ChakraProvider } from "@chakra-ui/react";
 
 const Forum = () => {
   const [posts, setPosts] = useState([]);
@@ -57,6 +58,7 @@ const Forum = () => {
   }
 
   return (
+    <ChakraProvider>
     <div>
       <>
         <AddNewPost />
@@ -72,6 +74,7 @@ const Forum = () => {
         </Container>
       </>
     </div>
+    </ChakraProvider>
   );
 };
 

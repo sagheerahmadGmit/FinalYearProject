@@ -40,10 +40,10 @@ function Footer() {
                     </div>
                     <div className='footer-link-items'>
                         <h2>Video Samples</h2>
-                        <Link to='/StickyNotesReact'>Sticky Notes</Link>
-                        <Link to='/'>Timetable</Link>
+                        <Link to='/notes'>Sticky Notes</Link>
+                        <Link to='/chat'>Messenger</Link>
                         <Link to='/notepad'>Notepad</Link>
-                        <Link to='/'>Student Forum</Link>
+                        <Link to='/forum'>Student Forum</Link>
                     </div>
                     <div className='footer-link-items'>
                         <h2>Social Media</h2>

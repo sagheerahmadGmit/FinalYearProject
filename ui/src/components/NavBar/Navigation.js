@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './styles.css';
+import './navstyles.css';
 import logo from '../../Images/logo.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
@@ -43,7 +43,7 @@ export default class Navigation extends React.Component {
             return (
                 <div style={{ height: '100%' }}>
                     <LoggedToolbar drawerClickHandler={this.drawerToggleClickHandler} />
-                    <SideDrawer show={this.state.sideDrawerOpen} />
+                    <SideDrawerLogged show={this.state.sideDrawerOpen} />
                     {backdrop}
                     <main>
                     </main>
@@ -90,7 +90,9 @@ const LoggedToolbar = props => (
             <div className="toolbar__navigation-items">
                 <ul>
                     <li><a href="/notepad">Notepad</a></li>
-                    <li><a href="/Board">Sticky Notes</a></li>
+                    <li><a href="/notes">Sticky Notes</a></li>
+                    <li><a href="/forum">Forum</a></li>
+                    <li><a href="/chat">Messenger</a></li>
                     <li className="usernameList">Hi, {localStorage.getItem("username")}</li>
                 </ul>
             </div>
@@ -113,7 +115,7 @@ const DrawerToggleButton = props => (
     </button>
 );
 
-const SideDrawer = props => {
+const SideDrawerLogged = props => {
     let drawerClasses = 'side-drawer';
     if (props.show) {
         drawerClasses = 'side-drawer open';
@@ -126,7 +128,25 @@ const SideDrawer = props => {
                 <li><a href="/contact">Contact us</a></li>
                 <li><a href="/notepad">Notepad</a></li>
                 <li><a href="/stickyNotes">Sticky Notes</a></li>
+                <li><a href="/forum">Forum</a></li>
+                <li><a href="/chat">Messenger</a></li>
                 <li onClick={() => logout()}><a href="/" >Logout</a></li>
+            </ul>
+        </nav>
+    )
+};
+
+const SideDrawer = props => {
+    let drawerClasses = 'side-drawer';
+    if (props.show) {
+        drawerClasses = 'side-drawer open';
+    }
+    return (
+        <nav className={drawerClasses}>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact us</a></li>
             </ul>
         </nav>
     )

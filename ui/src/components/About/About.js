@@ -1,5 +1,5 @@
 import React from 'react';
-import './styles.css';
+import './aboutcss.css';
 import Sagheer from '../../Images/sagheer.PNG';
 import Mathew from '../../Images/mathew.PNG';
 import Martin from '../../Images/martin.jpg';
@@ -17,10 +17,9 @@ const About = () => {
           not being able to access proper course materials due to internet issues. This is where other
           students can help them by submitting helpful information and documentation. This will
           allow to students to better manage their time and be more prepared for exams and projects.
-
         </p>
       </div>
-      <h2 style={{textAlign: 'center'}}>Our Team</h2>
+      {/* <h2 style={{textAlign: 'center'}}>Our Team</h2>
       <div className="row">
         <div className="column">
           <div className="card">
@@ -58,9 +57,9 @@ const About = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="about-section">
-        <p></p>
+        {/* <p></p> */}
         <h1>- Help us help you - </h1>
         <p>Let us know how we can improve.</p>
         <p>Please tell us how we can improve our website by emailing us and getting in contact with us,

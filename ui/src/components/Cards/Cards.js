@@ -22,19 +22,14 @@ function Cards() {
                     </ul>
                     <ul className='cards__items'>
                         <CardItem
-                            src='images/notepad.jpg'
+                            src='images/notepad.PNG'
                             text='Document your projects on Notedpad'
                             label='Notepad'
                         />
                         <CardItem
-                            src='images/timetable.jpg'
-                            text='Created your own schedule using the Timetable'
-                            label='Timetable'
-                        />
-                        <CardItem
-                            src='images/personalProfile.jpg'
-                            text='Personal Profile that allows you to freely edit your information'
-                            label='Profile'
+                            src='images/chat.PNG'
+                            text='Talk to other colleagues and friends via the chat application'
+                            label='chat'
                         />
                     </ul>
                 </div>

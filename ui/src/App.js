@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect} from 'react-router-dom';
+// import Redirect from 'react/jsx-no'
 import './App.css';
 import Home from './components/HomePage/Home';
 import About from './components/About/About';
 import Contact from './components/Contact/contact';
-import Error2 from './components/Error2';
+import Error from './components/Error';
 import Navigation from './components/NavBar/Navigation';
 import DataComponent from "./components/DataComponent";
 import Login from "./components/login/Login";
@@ -14,7 +15,7 @@ import Notepad from "./components/Notepad/Notepad";
 import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Board from './components/stickyNotes2/Board';
 import Forum from './components/studentForum2/Forum';
-import { ChakraProvider } from "@chakra-ui/react";
+
 import ChatMain from './components/ChatBot/ChatMain';
 class App extends React.Component {
 
@@ -35,18 +36,17 @@ class App extends React.Component {
                         <Route path="/register" component={Register} />
                         <Route path="/notepad" component={Notepad} />
                         <Route path="/chat" component={ChatMain} />
-                        <Route path="/board" component={Board} />
-                        <ChakraProvider>
-                            <Route path="/forum" component={Forum} />
-                        </ChakraProvider>
-                        <Route component={Error2} />
+                        <Route path="/notes" component={Board} />
+                        <Route path="/forum" component={Forum} />
+                        <Route component={Error} />
+                        {/* <Redirect to="/" /> */}
                     </Switch>
                     {/* <MessengerCustomerChat
-                        pageId="100009273085257"
+                        pageId="186924869562445"
                         appId="753869398896741"
                     /> */}
                     {
-                        window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/chat' && window.location.pathname != '/notepad' && <Footer />
+                        window.location.pathname != '/register' && window.location.pathname != '/login' && window.location.pathname != '/Board' && window.location.pathname != '/board' && window.location.pathname != '/chat' && window.location.pathname != '/notepad' && <Footer />
                     }
         
                 </div>
