@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import { GetUser } from './LoginComponent'
 import { useHistory } from "react-router-dom";
 import { Copyright, ConfirmUser } from '../register/utils';
-import ExampleComponent from './verifyRecaptcha';
+import RecaptchaVerify from './verifyRecaptcha';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -122,7 +122,7 @@ export default function Login() {
                             label="Remember me"
                         />
                         
-                    <ExampleComponent/>
+                    <RecaptchaVerify/>
                         <Button
                             type="submit"
                             fullWidth

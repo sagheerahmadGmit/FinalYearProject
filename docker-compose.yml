@@ -3,7 +3,7 @@ services:
   app-server:
     image: sagheergmit/final-year-project:latest
     ports:
-      - 8080:8085
+      - 8080:8080
     restart: always
     depends_on:
       - db
