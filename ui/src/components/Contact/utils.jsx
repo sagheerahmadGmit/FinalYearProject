@@ -5,7 +5,7 @@ export const Header = () => {
 };
 
 export const SendEmail = async (details) => {
-    let response = await fetch("http://localhost:5000/contact", {
+    let response = await fetch(`http://${window.location.hostname}:5000/contact`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json;charset=utf-8",

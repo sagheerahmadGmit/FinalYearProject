@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { ReCaptcha } from 'react-recaptcha-google'
 import Recaptcha from 'react-recaptcha';
 
-class ExampleComponent extends Component {
+class RecaptchaVerify extends Component {
   
     constructor(props) {
         super(props)
@@ -39,7 +38,6 @@ class ExampleComponent extends Component {
   render() {
     return (
       <div>
-        {/* You can replace captchaDemo with any ref word */}
         <Recaptcha
             sitekey="6Ldi30kaAAAAAB-s23M3RgtglRbwufDmGa21Od6E          "
             render="explicit"
@@ -50,4 +48,4 @@ class ExampleComponent extends Component {
     );
   };
 };
-export default ExampleComponent;
+export default RecaptchaVerify;
