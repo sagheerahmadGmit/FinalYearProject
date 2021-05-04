@@ -1,0 +1,8 @@
+{
+  "appId": "com.studenthub.app",
+  "appName": "studenthub",
+  "npmClient": "npm",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "cordova": {}
+}
