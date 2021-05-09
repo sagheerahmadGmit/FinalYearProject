@@ -17,13 +17,13 @@ require('bootstrap');
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-  apiKey: "AIzaSyDEiiWJW8VdhtDIYl09Eh1xsftc9cuzG1E",
-  authDomain: "studenthub3-92319.firebaseapp.com",
-  projectId: "studenthub3-92319",
-  storageBucket: "studenthub3-92319.appspot.com",
-  messagingSenderId: "927205554956",
-  appId: "1:927205554956:web:a2b2c1d64cfde1c3ada729",
-  measurementId: "G-QML47SNVNK"
+  apiKey: "AIzaSyDTCcoZw3bXV2ODLVuEKWQTfSP1iOVda2c",
+  authDomain: "hubstudent-ab740.firebaseapp.com",
+  projectId: "hubstudent-ab740",
+  storageBucket: "hubstudent-ab740.appspot.com",
+  messagingSenderId: "1065432832319",
+  appId: "1:1065432832319:web:007c51d7842f69d4a05b8a",
+  measurementId: "G-LCQ5EKZ5YB"
 };
 // Initialize Firebase
 // firebase.initializeApp(firebaseConfig);
