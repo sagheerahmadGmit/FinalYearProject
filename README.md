@@ -1,6 +1,6 @@
 # Student Hub - Final Year Project
 
-## Introduction
+# Introduction
 In this project, we built a web application for students which
 will act as a student portal. We used SpringBoot, ReactJS, MongoDB and
 Google Firebase as the main frameworks for our web application, user authentication and data storage. We used AWS and DockerHub as our cloud
@@ -27,7 +27,7 @@ who is in their class or what they look like. The web app will act as a social
 media platform which will allow the students to talk to each and get to know
 each other. 
 
-## Main Features
+# Main Features
 - Created a web application using SpringBoot and ReactJS
 - Web application contains the necessary components for a website i.e.
 About us, Contact page, Footer and a Navbar.
@@ -50,7 +50,7 @@ do
 - The application is mobile ready, as the web app is designed to fit any
 screen size
 
-## Technologies Used
+# Technologies Used
 - SpringBoot
 - ReactJS
 - MongoDB
@@ -65,7 +65,63 @@ screen size
 - Visual Studio Code
 - IntelliJ
 
-## Available Scripts
+# How to run
+
+In order to run the application, you will be required to have docker dowloaded. You can docker from the following link:
+```
+https://www.docker.com/get-started
+https://docs.docker.com/docker-for-windows/install/
+```
+
+After downloading docker please run the following commands:
+
+```
+git clone https://github.com/sagheerahmadGmit/FinalYearProject
+```
+
+```
+cd FinalYearProject
+```
+
+```
+Docker pull Mongo
+```
+
+```
+docker run -d -p 27017-27019:27017-27019 --name mongo
+```
+Run the following commands to download docker-compose
+
+```
+sudo apt-get update
+
+sudo apt-get upgrade
+
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg-agent \
+    software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+apt-cache madison docker-ce
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+
+sudo apt install docker.io
+
+sudo apt install docker-compose
+```
+
+```
+docker-compose up -d
+```
+
+# Available Scripts
 
 In the project directory, you can run:
 
@@ -132,37 +188,32 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-## How to run
-
-In order to run the application, you will be required to have docker dowloaded. You can docker from the following link:
-```
-https://www.docker.com/get-started
-```
-
-After downloading docker please run the following commands:
-
-```
-git clone https://github.com/sagheerahmadGmit/FinalYearProject
-```
-
-```
-cd FinalYearProject
-```
-
-```
-Docker pull Mongo
-```
-
-```
-docker-compose up -d
-```
-
-## Authors
+# Authors
 - Sagheer Ahmad
 - Mateusz Pawlowski
 
-## Acknowledgments
+# Acknowledgments
 - Martin Hynes 
 
-## Resources
+# Resources
 [https://loizenai.com/spring-boot-security-jwt-token-bsed-authentication-example-mysql-spring-jpa-restapis/]
+
+[https://www.baeldung.com/spring-cors]
+
+[https://www.devglan.com/spring-boot/spring-boot-mongodb-configuration]
+
+[https://www.golangprograms.com/how-to-create-simple-react-router-to-navigate-multiple-pages.html]
+
+[https://stackoverflow.com/questions/31852933/why-es6-react-component-works-only-with-export-default]
+
+[https://w3collective.com/react-contact-form/]
+
+[https://bezkoder.com/spring-boot-jwt-auth-mongodb/]
+
+[https://github.com/soumilshah1995/Deploy-Docker-Container-on-AWS/tree/c9dc112320c4e6298d10a6f663d66ff009823040]
+
+[https://www.youtube.com/watch?v=7-KczUt3BbI&ab_channel=KindsonTheTechPro]
+
+[https://stackoverflow.com/questions/39356826/how-to-check-if-it-a-text-input-has-a-valid-email-format-in-reactjs/39357015]
+
+[https://developer.okta.com/blog/2018/07/19/simple-crud-react-and-spring-boot]
