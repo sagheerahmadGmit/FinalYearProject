@@ -4,6 +4,7 @@ export const Header = () => {
     );
 };
 
+//send request to the node server to send us an email
 export const SendEmail = async (details) => {
     let response = await fetch(`http://${window.location.hostname}:5000/contact`, {
         method: "POST",

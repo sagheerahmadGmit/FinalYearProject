@@ -1,5 +1,9 @@
 import React from 'react';
 import { Header } from './utils';
+
+//This class will change the modal of the contact page for the user 
+//the user will see the details that they sent to us
+//and the message they sent
 export default class Submitconfirm extends React.Component {
 
     constructor(props) {

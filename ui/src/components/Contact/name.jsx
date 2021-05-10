@@ -2,6 +2,7 @@ import React from 'react';
 import Email from './email';
 import { Header } from './utils';
 
+//this class takes in the user name and changes the dom as the user inputs their name
 export default class Name extends React.Component {
     constructor(props) {
         super(props);
@@ -14,12 +15,14 @@ export default class Name extends React.Component {
         };
     }
 
+    //validate the input
     validate() {
         return (
             this.state.name.length > 0
         );
     }
 
+    //user must input a name
     handleBlur = (event) => {
         if (!this.validate()) {
             this.setState({ errorMessage: "A name is required!" })
@@ -28,10 +31,12 @@ export default class Name extends React.Component {
         }
     }
 
+    //change the modal
     handleChange = (event) => {
         this.setState({ name: event.target.value })
     }
 
+    //submit the name
     handleSubmit = (event) => {
         if (!this.validate()) {
             event.preventDefault();
@@ -42,6 +47,7 @@ export default class Name extends React.Component {
         }
     }
 
+    //render a form to allow the user to enter in their details
     render() {
         if (!this.state.clearScreen) {
             return (
@@ -61,6 +67,7 @@ export default class Name extends React.Component {
                 </div>
             );
         }
+        // load the next step of the contact page
         if (this.state.nameSubmitted) {
             return (
                 <Email name={this.state.name} />

@@ -1,3 +1,5 @@
+//this is the server that runs in the background 
+//it sends us an email with the user queries
 const express = require("express");
 const router = express.Router();
 const cors = require("cors");
@@ -25,6 +27,7 @@ contactEmail.verify((error) => {
   }
 });
 
+//the request will be sent to this address with variables to be sent to us
 router.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;

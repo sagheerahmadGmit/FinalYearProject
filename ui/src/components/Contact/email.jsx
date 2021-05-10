@@ -3,6 +3,7 @@ import Message from './message';
 import Name from './name';
 import { Header } from './utils';
 
+//this class takes in the user message and changes the dom as the user inputs their message
 export default class Email extends React.Component {
     constructor(props) {
         super(props);
@@ -15,13 +16,14 @@ export default class Email extends React.Component {
             errorMessage: "",
         };
     }
-
+     //validate the input
     validate() {
         return (
             /^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(this.state.email)
         );
     }
 
+    //user must input a email
     handleBlur = () => {
         if (!this.validate()) {
             this.setState({ errorMessage: "A valid email address is required!" })
@@ -30,10 +32,12 @@ export default class Email extends React.Component {
         }
     }
 
+    //change the modal
     handleChange = (event) => {
         this.setState({ email: event.target.value });
     }
 
+    //submit the email
     handleSubmit = (event) => {
         if (!this.validate()) {
             event.preventDefault();
@@ -44,10 +48,12 @@ export default class Email extends React.Component {
         }
     }
 
+    //reset the form
     handleReset = () => {
         this.setState({ clearScreen: true, resetForm: true });
     }
 
+    //render a form to allow the user to enter in their details
     render() {
         if (!this.state.clearScreen) {
             return (
@@ -72,11 +78,13 @@ export default class Email extends React.Component {
                 </div>
             );
         }
+        //submit the email
         if (this.state.emailSubmitted) {
             return (
                 <Message name={this.state.name} email={this.state.email} />
             );
         }
+        //if reset then go back to entering name
         if (this.state.resetForm) {
             return (
                 <Name />
