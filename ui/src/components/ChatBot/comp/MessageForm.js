@@ -1,13 +1,18 @@
+// imports
 import React from "react";
 import { useState } from 'react';
 import { sendMessage, isTyping} from "react-chat-engine";
 import {PictureAsPdfOutlined, SendOutlined} from "@material-ui/icons";
 
+// function MessageForm taking in props
 const MessageForm = (props) => {
+    // constants
     const [value, setValue] = useState('');
     const { chatId, creds } = props;
 
+    // handle the submission
     const handleSubmit = (event) => {
+        // error handling
         event.preventDefault();
         const text = value.trim();
         if (text.length > 0) sendMessage(creds, chatId, { text })
@@ -15,13 +20,16 @@ const MessageForm = (props) => {
     }
 
     const handleChange = (event) => {
+        // show that the user is typing
         setValue(event.target.value);
         isTyping(props, chatId);
     }
 
     const handleUpload = (event) => {
+        // send the message
         sendMessage(creds, chatId, { files: event.target.files, text: '' })
     }
+
 
     return(
         <form className="message-form" onSubmit={handleSubmit}>
@@ -50,4 +58,6 @@ const MessageForm = (props) => {
         </form>
     );
 }
+
+// export MessageForm
 export default MessageForm;

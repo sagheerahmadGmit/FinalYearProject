@@ -1,8 +1,13 @@
+// imports
 import React from 'react';
 import './footerStyles.css';
 import { ButtonLogin } from '../Button/ButtonLogin';
 import { Link } from 'react-router-dom';
 
+// This class creates a footer that is shown
+// at the bottom of most pages inside the project.
+// Inside the footer you can find our social media
+// links such as github and linkedIn
 function Footer() {
     return (
         <div className='footer-container'>
@@ -62,4 +67,6 @@ function Footer() {
         </div>
     );
 }
+
+// export Footer
 export default Footer;

@@ -1,8 +1,13 @@
+// imports
 import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
+// This class is provides us with the images
+// that are seen on the front page with all
+// the functionality this project uses (notepad, forum etc.)
 function Cards() {
+    // return everything inside the brackets
     return (
         <div className='cards'>
             <h1>Variety of features that can be explored by students!</h1>
@@ -38,4 +43,5 @@ function Cards() {
     );
 }
 
+// export Cards
 export default Cards;

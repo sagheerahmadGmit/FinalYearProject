@@ -1,6 +1,11 @@
+// imports
 import React from 'react';
 import './aboutcss.css';
 
+// This is class is our about page where we only have
+// simple text on the screen showing up for the user
+// in order to learn more about us (the developers of
+// the project).
 const About = () => {
   return (
     <div>
@@ -27,4 +32,5 @@ const About = () => {
   );
 }
 
+// Export the class
 export default About;

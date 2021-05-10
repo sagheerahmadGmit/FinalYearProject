@@ -1,11 +1,14 @@
+// imports
 import React from 'react';
 import '../../App.css';
 import { ButtonLogin } from '../Button/ButtonLogin';
 import { ButtonNews } from '../Button/ButtonNews';
-
 import './HeroSection.css';
 import logo from '../../Images/logo.png';
 
+// This class is used in the home page at the top
+// to show the video playing and display the two
+// buttons, one for newsletter and other to sign in
 function HeroSection() {
 
     return (
@@ -32,4 +35,5 @@ function HeroSection() {
     );
 }
 
+// export HeroSection
 export default HeroSection;

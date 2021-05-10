@@ -1,10 +1,14 @@
+// imports
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// function CardItem that takes in props
 function CardItem(props) {
-    
+
+    // if statement to see if the card has a link
     const isToLink = props.path ? props.path : '/'
-    
+
+    // return everything inside the brackets
     return (
         <>
             <li className='cards__item'>
@@ -25,4 +29,5 @@ function CardItem(props) {
     );
 }
 
+// export CardItem
 export default CardItem;

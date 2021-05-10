@@ -1,6 +1,9 @@
+// import
 import React from "react";
 
+// function TheirMessage taking in a message and the last message
 const TheirMessage = ({ lastMessage, message }) => {
+    // constant to see is the first message sent by the user
     const isFirstMessageByUser = !lastMessage || lastMessage.sender.username !== message.sender.username;
     return(
         <div className="message-row">
@@ -27,4 +30,6 @@ const TheirMessage = ({ lastMessage, message }) => {
         </div>
     );
 }
+
+// export TheirMessage
 export default TheirMessage;
