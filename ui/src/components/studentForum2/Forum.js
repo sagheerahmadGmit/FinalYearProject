@@ -1,12 +1,9 @@
 import { Flex, Spinner, VStack } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react";
-// import Navbar from "./navbar";
 import Post from "./post";
-// import db from "./firebase";
 import db from '../../index';
 import AddNewPost from "./add-new-post";
-import ReplyPost from "./add-reply-post";
 import { ChakraProvider } from "@chakra-ui/react";
 
 const Forum = () => {

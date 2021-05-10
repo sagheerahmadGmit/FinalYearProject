@@ -2,17 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-// import 'jquery';
-// import 'bootstrap/dist/js/bootstrap';
-// import 'bootstrap/dist/css/bootstrap.css'
 import reportWebVitals from './reportWebVitals';
 import firebase from 'firebase';
-// window.jQuery = window.$ = global.jquery;
 global.jQuery = require('jquery');
 require('bootstrap');
-
-//const firebase = require('firebase');
-// require('firebase/firestore');
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -25,10 +18,6 @@ var firebaseConfig = {
   appId: "1:1065432832319:web:007c51d7842f69d4a05b8a",
   measurementId: "G-LCQ5EKZ5YB"
 };
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
-
 const firebaseDB = firebase.initializeApp(firebaseConfig);
 const db = firebaseDB.firestore();
 export default db;

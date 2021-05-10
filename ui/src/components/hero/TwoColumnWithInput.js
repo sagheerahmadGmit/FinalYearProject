@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
-//eslint-disable-next-line
-import { css } from "styled-components/macro";
 
 import Header from "../headers/light.js";
 

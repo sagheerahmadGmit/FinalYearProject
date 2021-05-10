@@ -1,8 +1,5 @@
 import React from 'react';
 import './aboutcss.css';
-import Sagheer from '../../Images/sagheer.PNG';
-import Mathew from '../../Images/mathew.PNG';
-import Martin from '../../Images/martin.jpg';
 
 const About = () => {
   return (
@@ -19,47 +16,7 @@ const About = () => {
           allow to students to better manage their time and be more prepared for exams and projects.
         </p>
       </div>
-      {/* <h2 style={{textAlign: 'center'}}>Our Team</h2>
-      <div className="row">
-        <div className="column">
-          <div className="card">
-            <img src={Sagheer} alt="Sagheer" style={{width: '100%'}} height='300'/>
-            <div className="container">
-              <h2>Sagheer Ahmad</h2>
-              <p className="title">CEO &amp; Founder</p>
-              <p>Hard working and determined to provide a great user experince.</p>
-              <p>studenthub910@gmail.com</p>
-              <p><button className="button">Contact</button></p>
-            </div>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src={Mathew} alt="Mike" style={{width: '100%'}} height='300' />
-            <div className="container">
-              <h2>Mateusz Pawlowski</h2>
-              <p className="title">CEO &amp; Founder</p>
-              <p>Hard working and determined to provide a great user experince.</p>
-              <p>studenthub910@gmail.com</p>
-              <p><button className="button">Contact</button></p>
-            </div>
-          </div>
-        </div>
-        <div className="column">
-          <div className="card">
-            <img src={Martin} alt="John" style={{width: '100%'}} height='300' />
-            <div className="container">
-              <h2>Martin Hynes</h2>
-              <p className="title">Supervisor</p>
-              <p>Hard working and determined to provide a great user experince.</p>
-              <p>martin.hynes@gmit.ie</p>
-              <p><button className="button">Contact</button></p>
-            </div>
-          </div>
-        </div>
-      </div> */}
       <div className="about-section">
-        {/* <p></p> */}
         <h1>- Help us help you - </h1>
         <p>Let us know how we can improve.</p>
         <p>Please tell us how we can improve our website by emailing us and getting in contact with us,

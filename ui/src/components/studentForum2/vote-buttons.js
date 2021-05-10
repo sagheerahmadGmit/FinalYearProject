@@ -1,7 +1,6 @@
 import { IconButton, Text, VStack } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { FiArrowDown, FiArrowUp } from "react-icons/fi";
-// import db from "./firebase";
 import db from '../../index';
 
 const VoteButtons = ({ post }) => {

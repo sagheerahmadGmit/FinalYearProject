@@ -14,7 +14,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import { Copyright, SaveUser, postData } from './utils';
 import { useHistory } from "react-router-dom";
-import { message } from 'antd';
 
 const useStyles = makeStyles((theme) => ({
   root: {

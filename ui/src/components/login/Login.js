@@ -12,7 +12,6 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { GetUser } from './LoginComponent'
 import { useHistory } from "react-router-dom";
 import { Copyright, ConfirmUser } from '../register/utils';
 import RecaptchaVerify from './verifyRecaptcha';
@@ -134,9 +133,6 @@ export default function Login() {
                         </Button>
                         <Grid container>
                             <Grid item xs>
-                                {/*<Link to='#' href="/" variant="body2">*/}
-                                {/*    Forgot password?*/}
-                                {/*</Link>*/}
                             </Grid>
                             <Grid item>
                                 <Link to='/register' href="/register" variant="body2">

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './navstyles.css';
 import logo from '../../Images/logo.png';
 import Dropdown from 'react-bootstrap/Dropdown';
-import DropdownButton from 'react-bootstrap/DropdownButton';
 
 export default class Navigation extends React.Component {
     state = {
