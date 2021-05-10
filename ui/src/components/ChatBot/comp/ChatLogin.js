@@ -41,8 +41,8 @@ const ChatLogin = () => {
             <div className="form">
                 <h1 className="title">Chat Application</h1>
                 <form onSubmit={handleSubmit}>
-                    // check did the user fill out everything
-                    // if they did set the username and passowrd for them
+                    {/*check did the user fill out everything*/}
+                    {/*if they did set the username and passowrd for them*/}
                     <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required/>
                     <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required/>
                     <div align="center">

@@ -24,7 +24,7 @@ class SidebarComponent extends React.Component {
         if(notes){
             return (
                 <div className={classes.sidebarContainer}>
-                    <!-- Button to create a new note -->
+                    {/*Button to create a new note*/}
                     <Button
                         onClick={this.newNoteBtnClick}
                         className={classes.newNoteBtn}
@@ -32,14 +32,14 @@ class SidebarComponent extends React.Component {
                     {
                         this.state.addingNote ?
                             <div>
-                                <!-- Enter a note title -->
+                                {/*Enter a note title*/}
                                 <input
                                     type='text'
                                     className={classes.newNoteInput}
                                     placeholder='Enter Note Title'
                                     onKeyUp={(e => this.updateTitle(e.target.value))}
                                 />
-                                <!-- Add the note -->
+                                {/*Add the note*/}
                                 <Button
                                     className={classes.newNoteSubmitBtn}
                                     onClick={this.newNote}>Submit Note</Button>

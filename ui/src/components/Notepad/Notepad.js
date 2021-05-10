@@ -23,7 +23,6 @@ export default class Notepad extends React.Component {
     render() {
         return (
             <div className="app-container">
-                <!-- Show the sidebar with the notes -->
                 <Sidebar
                     selectedNoteIndex={this.state.selectedNoteIndex}
                     notes={this.state.notes}
@@ -33,7 +32,7 @@ export default class Notepad extends React.Component {
                 />
                 {
                     this.state.selectedNote ?
-                        <!-- Allow the user to edit a note -->
+                        // Allow the user to edit a note
                         <Editor
                             selectedNote={this.state.selectedNote}
                             selectedNoteIndex={this.state.selectedNoteIndex}

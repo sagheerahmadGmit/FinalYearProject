@@ -16,7 +16,7 @@ class SidebarItemComponent extends React.Component {
 
         return (
             <div key={_index}>
-                <!-- List the notes -->
+                {/*List the notes*/}
                 <ListItem
                     className={classes.listItem}
                     selected={selectedNoteIndex === _index}
@@ -25,13 +25,13 @@ class SidebarItemComponent extends React.Component {
                         className={classes.textSection}
                         // select a note
                         onClick={() => this.selectNote(_note,_index)}>
-                        <!-- Show the first few texts of a note -->
+                        {/*Show the first few texts of a note*/}
                         <ListItemText
                             primary={_note.title}
                             secondary={removeHTMLTags(_note.body.substring(0, 30)) + '...'}>
                         </ListItemText>
                     </div>
-                    <!-- Delete the icon when a note is deleted -->
+                    {/*Delete the icon when a note is deleted*/}
                     <DeleteIcon
                         onClick={() => this.deleteNote(_note)}
                         className={classes.deleteIcon}>

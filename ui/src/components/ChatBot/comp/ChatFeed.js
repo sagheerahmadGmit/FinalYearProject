@@ -39,10 +39,10 @@ const ChatFeed = (props) => {
             return (
                 <div key={`msg_${index}`} style={{ width: '100%' }}>
                     <div className="message-block">
-                        <!-- if statement to check is the message sent by the user or someone else -->
+                        {/*if statement to check is the message sent by the user or someone else*/}
                         {isMyMessage ? <MyMessage message={message} /> : <TheirMessage message={message} lastMessage={messages[lastMessageKey]} />}
                     </div>
-                    <!-- statement depending who sent the message show the message on the screen (left for others, right for the user) -->
+                    {/*statement depending who sent the message show the message on the screen (left for others, right for the user)*/}
                     <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>
                         {renderReadReceipts(message, isMyMessage)}
                     </div>
@@ -59,14 +59,14 @@ const ChatFeed = (props) => {
             <div className="chat-title-container">
                 <div className="chat-title">{chat?.title}</div>
                 <div className="chat-subtitle">
-                    <!-- map all the people from that specific chat -->
+                    {/*map all the people from that specific chat*/}
                     {chat.people.map((person) => ` ${person.person.username}`)}
                 </div>
             </div>
             {renderMessages()}
             <div style={{ height: '100px' }} />
             <div className="message-form-container">
-                <!--  get an active chat -->
+                {/*get an active chat*/}
                 <MessageForm {...props} chatId={activeChat} />
             </div>
         </div>
