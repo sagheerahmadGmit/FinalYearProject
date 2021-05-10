@@ -3,6 +3,7 @@ import SubmitSuccess from './submitSuccess';
 import Name from './name';
 import { Header, SendEmail } from './utils';
 
+//this class takes in the user email and changes the dom as the user inputs their email
 export default class Message extends React.Component {
     constructor(props) {
         super(props);
@@ -16,13 +17,14 @@ export default class Message extends React.Component {
             errorMessage: "",
         };
     }
-
+     //validate the input
     validate = () => {
         return (
             this.state.message.length > 0
         );
     }
 
+    //user must input a message
     handleBlur = () => {
         if (!this.validate()) {
             this.setState({ errorMessage: "A message is required!" });
@@ -31,10 +33,12 @@ export default class Message extends React.Component {
         }
     }
 
+    //change the modal
     handleChange = (event) => {
         this.setState({ message: event.target.value });
     }
 
+//submit the message
     handleSubmit = async (event) => {
         if (!this.validate()) {
             event.preventDefault();
@@ -53,10 +57,12 @@ export default class Message extends React.Component {
         }
     }
 
+    //reset the form
     handleReset = () => {
         this.setState({ clearScreen: true, resetForm: true });
     }
 
+    //render a form to allow the user to enter in their details
     render() {
         if (!this.state.clearScreen) {
             return (
@@ -86,11 +92,13 @@ export default class Message extends React.Component {
                 </div>
             );
         }
+        //submit the message
         if (this.state.messageSubmitted) {
             return (
                 <SubmitSuccess name={this.state.name} email={this.state.email} message={this.state.message} />
             );
         }
+        //if reset then load the name class again
         if (this.state.resetForm) {
             return (
                 <Name />
