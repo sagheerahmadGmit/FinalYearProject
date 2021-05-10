@@ -52,6 +52,8 @@ screen size
 
 # Video Demonstration
 
+We could not cover all features of the website as the screencast was getting too long.
+
 [![Foo](https://cdn.havecamerawilltravel.com/photographer/files/2020/01/youtube-logo-new.jpg)](https://youtu.be/vBzbadA_kjk)
 
 # Technologies Used
