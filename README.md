@@ -50,6 +50,10 @@ do
 - The application is mobile ready, as the web app is designed to fit any
 screen size
 
+# Video Demonstration
+
+[![Foo](https://cdn.havecamerawilltravel.com/photographer/files/2020/01/youtube-logo-new.jpg)](https://youtu.be/vBzbadA_kjk)
+
 # Technologies Used
 - SpringBoot
 - ReactJS
