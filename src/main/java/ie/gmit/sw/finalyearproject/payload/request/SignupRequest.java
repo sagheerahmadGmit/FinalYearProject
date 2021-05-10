@@ -5,21 +5,28 @@ import java.util.Set;
 import javax.validation.constraints.*;
  
 public class SignupRequest {
+    // the user makes a registeration request
+    // the users username and password and email will be stored in this class
+    // and used for saving the user details into the database
+
+    //the suername must be minimun 3 characters
     @NotBlank
     @Size(min = 3, max = 20)
     private String username;
- 
+
     @NotBlank
     @Size(max = 50)
     @Email
     private String email;
     
     private Set<String> roles;
-    
+
+    //the password must be minimum 6 characters
     @NotBlank
     @Size(min = 6, max = 40)
     private String password;
-  
+
+    //getters and setters for the user registration
     public String getUsername() {
         return username;
     }

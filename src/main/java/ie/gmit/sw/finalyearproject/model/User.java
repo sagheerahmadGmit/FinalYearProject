@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "users")
 public class User {
+  // the details of the user will be managed by this class
   @Id
   private String id;
 
@@ -29,6 +30,7 @@ public class User {
   @Size(max = 120)
   private String password;
 
+  //set the users role
   @DBRef
   private Set<Role> roles = new HashSet<>();
 
@@ -41,6 +43,7 @@ public class User {
     this.password = password;
   }
 
+  // getters and setters
   public String getId() {
     return id;
   }

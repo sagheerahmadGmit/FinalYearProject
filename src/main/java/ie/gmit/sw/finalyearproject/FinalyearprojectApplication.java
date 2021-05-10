@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class FinalyearprojectApplication {
 
+	// run the backend of the project using the user repository
 	private UserRepository userRepository;
 
 	public static void main(String[] args) {

@@ -5,6 +5,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "roles")
 public class Role {
+  //the variables to store user id and name and their role
   @Id
   private String id;
 
@@ -13,7 +14,7 @@ public class Role {
   public Role() {
 
   }
-
+  //getters and setters for the role
   public Role(ERole name) {
     this.name = name;
   }

@@ -13,14 +13,19 @@ import io.jsonwebtoken.*;
 
 @Component
 public class JwtUtils {
+	// using the secrety key and the expiration time in milliseconds generate a
+	// token to authenticate the user login
 	private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
+	//secret key defined in the application.properties
 	@Value("${bezkoder.app.jwtSecret}")
 	private String jwtSecret;
 
+	//time in milliseconds defined in the application.properties
 	@Value("${bezkoder.app.jwtExpirationMs}")
 	private int jwtExpirationMs;
 
+	//method to generate the token
 	public String generateJwtToken(Authentication authentication) {
 
 		UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
@@ -33,10 +38,12 @@ public class JwtUtils {
 				.compact();
 	}
 
+	//get the username if they already exist using the generated token
 	public String getUserNameFromJwtToken(String token) {
 		return Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody().getSubject();
 	}
 
+	//validate the token to see if the token is valid or not
 	public boolean validateJwtToken(String authToken) {
 		try {
 			Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(authToken);

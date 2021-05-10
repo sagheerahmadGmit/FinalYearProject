@@ -26,6 +26,7 @@ public class UserDetailsImpl implements UserDetails {
 
 	private Collection<? extends GrantedAuthority> authorities;
 
+	// constructor
 	public UserDetailsImpl(String id, String username, String email, String password,
 			Collection<? extends GrantedAuthority> authorities) {
 		this.id = id;
@@ -48,6 +49,7 @@ public class UserDetailsImpl implements UserDetails {
 				authorities);
 	}
 
+	// getters and setters for the class variables
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return authorities;

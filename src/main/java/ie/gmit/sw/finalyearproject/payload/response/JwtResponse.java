@@ -3,6 +3,7 @@ package ie.gmit.sw.finalyearproject.payload.response;
 import java.util.List;
 
 public class JwtResponse {
+	//variables
 	private String token;
 	private String type = "Bearer";
 	private String id;
@@ -10,6 +11,7 @@ public class JwtResponse {
 	private String email;
 	private List<String> roles;
 
+	//send back a JWT response letting the user know they have signed in
 	public JwtResponse(String accessToken, String id, String username, String email, List<String> roles) {
 		this.token = accessToken;
 		this.id = id;
@@ -18,6 +20,7 @@ public class JwtResponse {
 		this.roles = roles;
 	}
 
+	//getters and setters
 	public String getAccessToken() {
 		return token;
 	}

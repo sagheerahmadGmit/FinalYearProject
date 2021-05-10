@@ -14,9 +14,12 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	UserRepository userRepository;
 
+	// check if the username exists or not for user login
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		//check the user repository if the user exists or not,
+		//if the user does not exist, output the error message
 		User user = userRepository.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 
