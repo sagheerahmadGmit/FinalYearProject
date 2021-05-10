@@ -52,7 +52,7 @@ screen size
 
 # Video Demonstration
 
-We could not cover all features of the website as the screencast was getting too long.
+We could not cover all features of the website as the screencast was getting too long. In order to access the video, please click the link image below.
 
 [![Foo](https://cdn.havecamerawilltravel.com/photographer/files/2020/01/youtube-logo-new.jpg)](https://youtu.be/vBzbadA_kjk)
 
