@@ -1,3 +1,4 @@
+//import the required classes
 import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
@@ -15,11 +16,13 @@ import Checkbox from '@material-ui/core/Checkbox';
 import { Copyright, SaveUser, postData } from './utils';
 import { useHistory } from "react-router-dom";
 
+//css used for the class
 const useStyles = makeStyles((theme) => ({
   root: {
     height: '100vh',
   },
   image: {
+    // generate a new image everytime the user reloads the page
     backgroundImage: 'url(https://source.unsplash.com/featured/?Computers,software)',
     backgroundRepeat: 'no-repeat',
     backgroundColor:
@@ -47,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Register() {
+  // save the user details into variables that will be sent to the backend for registering the user
   const classes = useStyles();
   const [fName, setfName] = useState(0);
   const [sName, setsName] = useState(0);
@@ -56,37 +60,44 @@ export default function Register() {
 
   let verify = false;
 
+  //when the user presses submit then send the details to the spring application
   const handleSubmit = async (evt) => {
     evt.preventDefault();
-    //send request 
+    //send request with the following details
     let details = {
       username: fName,
       email: email,
       password: password,
+      // give the role of user
       roles: ["user"]
     };
 
+    //register the user into the the chat engine also
     await postData('https://api.chatengine.io/users/', { username: fName, secret: password }, '30535aad-5cc0-484f-ba89-c4d44c78d944').then(data => {
       console.log(data); // JSON data parsed by `data.json()` call
 
     });
 
+    // get the response back from the server for registering the user
     await SaveUser(details).then(response => {
 
       console.log(response);
 
+      // if the registerion is scuccessful,
+      // then alert the user and take them to the login page
       if(response.message === "User registered successfully!"){
           history.push("/login")
           alert("You have successfully Registered!!")
           verify = true;
       }
       else{
+        //the credentials did not meet the required criteria
           alert(response.message ? response.message : "The details entered are incorrect!!")
       }
   });
   
   }
-
+//create a form to take in the user details
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -97,6 +108,7 @@ export default function Register() {
         <Typography component="h1" variant="h5">
           Sign up
           </Typography>
+        {/*Take in the username and save it to the given variable so that it can be sent to the server*/}
         <form className={classes.form} onSubmit={handleSubmit} validate="true">
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
@@ -112,6 +124,7 @@ export default function Register() {
                 autoFocus
               />
             </Grid>
+            {/*Take in the user fullname and save it to the given variable so that it can be sent to the server*/}
             <Grid item xs={12} sm={6}>
               <TextField
                 variant="outlined"
@@ -124,6 +137,7 @@ export default function Register() {
                 onChange={e => setsName(e.target.value)}
               />
             </Grid>
+            {/*Take in the user email and save it to the given variable so that it can be sent to the server*/}
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -137,6 +151,7 @@ export default function Register() {
                 onChange={e => setEmail(e.target.value)}
               />
             </Grid>
+            {/*Take in the user password and save it to the given variable so that it can be sent to the server*/}
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -151,12 +166,14 @@ export default function Register() {
               />
             </Grid>
             <Grid item xs={12}>
+              {/*The suer wants to receive promotional emails*/}
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
                 label="I want to receive inspiration, marketing promotions and updates via email."
               />
             </Grid>
           </Grid>
+          {/*Submit the details to the database*/}
           <Button
             type="submit"
             fullWidth
@@ -168,6 +185,7 @@ export default function Register() {
         </Button>
           <Grid container justify="flex-end">
             <Grid item>
+              {/*allow the user to sign in if they already have an account*/}
               <Link href="/login" variant="body2">
                 Already have an account? Sign in
               </Link>

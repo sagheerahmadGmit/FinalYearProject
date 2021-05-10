@@ -1,3 +1,4 @@
+//import the required classes and css
 import React, { Component } from "react";
 import Note from "./Note";
 import './styles.scss';
@@ -5,6 +6,7 @@ import './styles.scss';
 const newNoteText = "This is a New Note!!!";
 const newNoteButtonText = "New Note";
 
+//create the board for the sticky notes
 export default class Board extends Component {
 
   constructor(props) {

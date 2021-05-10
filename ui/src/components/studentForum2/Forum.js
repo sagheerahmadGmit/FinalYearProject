@@ -1,3 +1,4 @@
+//import the required classes
 import { Flex, Spinner, VStack } from "@chakra-ui/react";
 import { Container } from "@chakra-ui/react"
 import React, { useEffect, useState } from "react";
@@ -46,6 +47,7 @@ const Forum = () => {
       });
   }, []);
 
+  // the post is loading
   if (isLoading) {
     return (
       <Flex minH="100vh" justifyContent="center" alignItems="center">
@@ -54,6 +56,7 @@ const Forum = () => {
     );
   }
 
+  // get the posts from the database
   return (
     <ChakraProvider>
     <div>
@@ -62,6 +65,7 @@ const Forum = () => {
 
         <Container maxW="md" centerContent p={8}>
           <div>
+              {/*get all the saved posts from the firebase database and display them on the page*/}
               <VStack spacing={8} w="100%">
                 {posts.map((post) => (
                   <Post post={post} key={post.id} />
@@ -74,5 +78,5 @@ const Forum = () => {
     </ChakraProvider>
   );
 };
-
+//export the class to be used else where
 export default Forum;

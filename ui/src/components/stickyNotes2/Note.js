@@ -4,6 +4,7 @@ import './styles.scss';
 const saveText = "SAVE";
 const removeToolTipText = "Remove note";
 
+//note that will be saved onto the sticky notes board for the user to see
 export default class Note extends Component {
 
   constructor(props) {
@@ -33,12 +34,12 @@ export default class Note extends Component {
     e.dataTransfer.setData("application/x-note", index);
   }
 
-  // Get random position
+  // Get random position for the note
   randomBetween(min, max) {
     return (min + Math.ceil(Math.random() * max));
   }
 
-  // Turn on edit moge
+  // Turn on edit mode
   edit() {
     this.setState({editing: true});
   }

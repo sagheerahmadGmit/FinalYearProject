@@ -16,12 +16,14 @@ import { useHistory } from "react-router-dom";
 import { Copyright, ConfirmUser } from '../register/utils';
 import RecaptchaVerify from './verifyRecaptcha';
 
+//css for the login page
 const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
         marginTop: '56px',
     },
     image: {
+        // generate a new image everytime the user reloads the page
         backgroundImage: 'url(https://source.unsplash.com/featured/?software)',
         backgroundRepeat: 'no-repeat',
         backgroundColor:
@@ -48,23 +50,29 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// send the user details to the server to see if the user exists and log in the user
 export default function Login() {
     const classes = useStyles();
-
+    // save the user details into variables that will be sent to the backend for logging the user
     const [fName, setfName] = useState(0);
     const [password, setPassword] = useState(0);
     const [verifyLogin, setVerifyLogin] = useState(0);
     const history = useHistory();
 
+    //when the user presses submit then send the details to the spring application
     const handleSubmit = async (evt) => {
         evt.preventDefault();
-        //send request 
+        //send request with the following details
         let details = {
             username: fName,
             password: password
         };
 
+        // get the response back from the server for logging in the user
         await ConfirmUser(details).then(response => {
+            //login the user into the the chat engine also
+            // if the login is scuccessful,
+            // then alert the user and take them to the home page
             if(response.accessToken){
                 history.push("/")
                 alert(fName + " ,you have successfully logged in!!")
@@ -73,12 +81,13 @@ export default function Login() {
                 window.location.reload();
             }
             else{
+                //the credentials did not meet the required criteria
                 alert("Incorrect details")
             }
         });
 
     }
-
+//create a form to ake in the user details
     return (
         <Grid container component="main" className={classes.root}>
             <CssBaseline />
@@ -91,6 +100,7 @@ export default function Login() {
                     <Typography component="h1" variant="h5">
                         Sign in
                     </Typography>
+                    {/*Take in the username and save it to the given variable so that it can be sent to the server*/}
                     <form className={classes.form} onSubmit={handleSubmit} validate="true">
                         <TextField
                             variant="outlined"
@@ -104,6 +114,7 @@ export default function Login() {
                             autoFocus
                             onChange={e => setfName(e.target.value)}
                         />
+                        {/*Take in the user password and save it to the given variable so that it can be sent to the server*/}
                         <TextField
                             variant="outlined"
                             margin="normal"
@@ -120,8 +131,9 @@ export default function Login() {
                             control={<Checkbox value="remember" color="primary" />}
                             label="Remember me"
                         />
-                        
+                    {/*    verify the recaptcha*/}
                     <RecaptchaVerify/>
+                        {/*submit button to send request for login*/}
                         <Button
                             type="submit"
                             fullWidth
@@ -131,6 +143,7 @@ export default function Login() {
                         >
                             Sign In
                         </Button>
+                        {/*if the user does not have an account they can follow this link and sign up*/}
                         <Grid container>
                             <Grid item xs>
                             </Grid>

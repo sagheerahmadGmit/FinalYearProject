@@ -46,12 +46,15 @@ const VoteButtons = ({ post }) => {
 
     const date = new Date();
 
+    //user wants to upvote a post
     if (type === "upvote") {
       upVotesCount = upVotesCount + 1;
+      //user wants to downvote a post
     } else {
       downVotesCount = downVotesCount + 1;
     }
 
+    //update the post in the database in firebase
     await db.collection("posts").doc(post.id).set({
       title: post.title,
       upVotesCount,
@@ -66,6 +69,7 @@ const VoteButtons = ({ post }) => {
     setVoting(false);
   };
 
+  // check to see if the user already upvoted or downvoted a post
   const checkIfPostIsAlreadyVoted = () => {
     if (votedPosts.indexOf(post.id) > -1) {
       return true;
@@ -76,6 +80,7 @@ const VoteButtons = ({ post }) => {
 
   return (
     <>
+      {/*Button to upvote a post*/}
       <VStack>
         <IconButton
           size="lg"
@@ -90,6 +95,7 @@ const VoteButtons = ({ post }) => {
           {post.upVotesCount}
         </Text>
       </VStack>
+      {/*Button to downvote a post*/}
       <VStack>
         <IconButton
           size="lg"
@@ -107,5 +113,5 @@ const VoteButtons = ({ post }) => {
     </>
   );
 };
-
+//export the class to be used in another class
 export default VoteButtons;

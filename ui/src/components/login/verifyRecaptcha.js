@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Recaptcha from 'react-recaptcha';
 
+//this class is to generate a recaptcha to the login page
+//to provide extra security for the user
 class RecaptchaVerify extends Component {
   
     constructor(props) {
@@ -14,11 +16,12 @@ class RecaptchaVerify extends Component {
           isVerified: false
         }
       }
-    
+    //output to the console if the captcha works
       recaptchaLoaded() {
         console.log('capcha successfully loaded');
       }
-    
+
+      //make sure there is no bot trying to access the web application
       handleSubscribe() {
         if (this.state.isVerified) {
           alert('You have successfully subscribed!');
@@ -38,6 +41,7 @@ class RecaptchaVerify extends Component {
   render() {
     return (
       <div>
+        {/*  load the recaptcha from google */}
         <Recaptcha
             sitekey="6Ldi30kaAAAAAB-s23M3RgtglRbwufDmGa21Od6E          "
             render="explicit"

@@ -1,11 +1,14 @@
 import React from 'react'
 import { GetData } from './LoginService'
 
+//this was test class that we created to see if the database was saving user to the server
+//we created a table and outputted the table to the screen
 class LoginComponent extends React.Component {
     state = {
         users: []
     }
 
+    //get the user data
     async componentDidMount() {
         let Data = await GetData()
         console.log(Data)
@@ -21,6 +24,7 @@ class LoginComponent extends React.Component {
                 <table className="table table-striped">
                     <thead>
                         <tr>
+                            {/*Table headings*/}
                             <td> User First Name</td>
                             <td> User Last Name</td>
                             <td> User Email</td>
@@ -29,6 +33,7 @@ class LoginComponent extends React.Component {
 
                     </thead>
                     <tbody>
+                        {/*Insert the data into the table under the given heading*/}
                         {
                             this.state.users.map(
                                 user =>
@@ -47,5 +52,5 @@ class LoginComponent extends React.Component {
         )
     }
 }
-
+//export the class
 export default LoginComponent
