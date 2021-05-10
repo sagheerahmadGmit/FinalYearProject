@@ -1,3 +1,7 @@
+// as we will update the data live, in order
+// to not update it for every character we
+// use the debounce function to update the
+// note when the user stops writing for 1500 seconds
 export default function debounce(a,b,c){
     var d,e;
     return function(){
@@ -10,6 +14,7 @@ export default function debounce(a,b,c){
     }
 }
 
+// remove html tags for the preview in the sidebar items
 export function removeHTMLTags (str) {
     return str.replace(/<[^>]*>?/gm, '');
 };

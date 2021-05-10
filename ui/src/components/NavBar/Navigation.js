@@ -1,3 +1,4 @@
+// imports
 import React, { useState } from 'react';
 import './navstyles.css';
 import logo from '../../Images/logo.png';
@@ -8,6 +9,7 @@ export default class Navigation extends React.Component {
         sideDrawerOpen: false
     };
 
+    // handle the navbar
     drawerToggleClickHandler = () => {
         this.setState(prevState => {
             return {
@@ -16,6 +18,7 @@ export default class Navigation extends React.Component {
         });
     };
 
+    // handle the sidebar
     backdropClickHandler = () => {
         this.setState({ sideDrawerOpen: false });
     };
@@ -23,10 +26,12 @@ export default class Navigation extends React.Component {
     render() {
         let backdrop;
 
+        // check if the sidebar is open
         if (this.state.sideDrawerOpen) {
             backdrop = <Backdrop click={this.backdropClickHandler} />;
         }
 
+        // if the user is not logged in use the normal navbar
         if (!localStorage.getItem('username')) {
             return (
                 <div style={{ height: '100%' }}>
@@ -38,7 +43,7 @@ export default class Navigation extends React.Component {
                 </div>
             )
         }
-        else {
+        else { // use the logged in navbar when the user is logged in
             return (
                 <div style={{ height: '100%' }}>
                     <LoggedToolbar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -52,13 +57,15 @@ export default class Navigation extends React.Component {
     }
 }
 
+// logout function
 const logout = () => {
-
+    // clear the local storage
     console.log("Logged Out");
     localStorage.clear();
 
 }
 
+// normal navbar when not logged in
 const Toolbar = props => (
     <header className="toolbar">
         <nav className="toolbar__navigation">
@@ -78,6 +85,7 @@ const Toolbar = props => (
     </header>
 );
 
+// function when logged in changes the navbar
 const LoggedToolbar = props => (
     <header className="toolbar">
         <nav className="toolbar__navigation">
@@ -106,6 +114,7 @@ const LoggedToolbar = props => (
     </header>
 );
 
+// button to open the side drawer
 const DrawerToggleButton = props => (
     <button className="toggle-button" onClick={props.click}>
         <div className="toggle-button__line" />
@@ -114,6 +123,7 @@ const DrawerToggleButton = props => (
     </button>
 );
 
+// sidebar when the user is logged in
 const SideDrawerLogged = props => {
     let drawerClasses = 'side-drawer';
     if (props.show) {
@@ -135,6 +145,7 @@ const SideDrawerLogged = props => {
     )
 };
 
+// sidebar when the user is not logged in
 const SideDrawer = props => {
     let drawerClasses = 'side-drawer';
     if (props.show) {
@@ -151,6 +162,7 @@ const SideDrawer = props => {
     )
 };
 
+// close the sidebar
 const Backdrop = props => (
     <div className="backdrop" onClick={props.click} />
 )
